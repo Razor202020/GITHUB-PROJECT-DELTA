@@ -1,13 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://crq6bxvift7ix"]
+[gd_scene load_steps=2 format=3 uid="uid://crq6bxvift7ix"]
 
-[ext_resource type="PackedScene" uid="uid://yoj6hibfu3n7" path="res://Level/maze_test.tscn" id="1_x32tl"]
 [ext_resource type="PackedScene" uid="uid://b70hv4v75lr1p" path="res://player/player.tscn" id="2_3mt1c"]
 
 [node name="Level" type="Node2D"]
 position = Vector2(130, 20)
 
-[node name="mazeTest" parent="." instance=ExtResource("1_x32tl")]
-position = Vector2(379, 197)
-
 [node name="player" parent="." instance=ExtResource("2_3mt1c")]
-position = Vector2(539, 347)
+position = Vector2(444, 291)

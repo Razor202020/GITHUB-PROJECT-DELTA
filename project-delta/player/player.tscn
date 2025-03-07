@@ -1,8 +1,8 @@
 [gd_scene load_steps=16 format=3 uid="uid://b70hv4v75lr1p"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_aix8d"]
-[ext_resource type="Texture2D" uid="uid://hc4xqfibasfj" path="res://assets/astro.png" id="1_wjwc0"]
-[ext_resource type="Texture2D" uid="uid://cvneh63bxvy32" path="res://assets/astrowalk.png" id="2_itgj2"]
+[ext_resource type="Texture2D" path="res://assets/astro.png" id="1_wjwc0"]
+[ext_resource type="Texture2D" path="res://assets/astrowalk.png" id="2_itgj2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7hege"]
 atlas = ExtResource("1_wjwc0")
