@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cvneh63bxvy32"
-path="res://.godot/imported/astrowalk.png-1255e15e9b00b3255a2f1b483bcbed6d.ctex"
+path="res://.godot/imported/astrowalk.png-54c6bd787cfff76b4d05479b04d54680.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/astrowalk.png"
-dest_files=["res://.godot/imported/astrowalk.png-1255e15e9b00b3255a2f1b483bcbed6d.ctex"]
+source_file="res://assets/astro/astrowalk.png"
+dest_files=["res://.godot/imported/astrowalk.png-54c6bd787cfff76b4d05479b04d54680.ctex"]
 
 [params]
 
