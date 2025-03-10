@@ -1,8 +1,0 @@
-[gd_scene format=3 uid="uid://5v0etn2eciqi"]
-
-[node name="mazeTest" type="Node2D"]
-position = Vector2(409, 253)
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(50, 79)
-scale = Vector2(4.60222, 3.24222)
