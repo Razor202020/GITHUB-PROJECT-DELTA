@@ -1,5 +1,8 @@
-[gd_scene format=3 uid="uid://dgwpi5ob3b8b6"]
+[gd_scene load_steps=2 format=3 uid="uid://dgwpi5ob3b8b6"]
+
+[ext_resource type="Texture2D" uid="uid://cf5etul7cc4ja" path="res://assets/the rock.png" id="1_ps13p"]
 
 [node name="Background" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ps13p")
