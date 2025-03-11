@@ -113,12 +113,10 @@ animations = [{
 script = ExtResource("1_1eoe5")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(357, 90)
-scale = Vector2(10, 10)
+position = Vector2(390, 61)
 sprite_frames = SubResource("SpriteFrames_ifdpg")
 animation = &"enemyWalk"
 autoplay = "enemyWalk"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-position = Vector2(56, -76)
-polygon = PackedVector2Array(298, 124, 396, 229, 420, 414, 267, 403, 292, 275, 211, 185)
+polygon = PackedVector2Array(387, 58, 394, 62, 399, 72, 399, 81, 392, 86, 386, 79, 392, 77, 388, 71, 384, 61)

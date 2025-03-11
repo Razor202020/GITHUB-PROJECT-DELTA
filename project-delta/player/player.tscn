@@ -101,15 +101,14 @@ height = 46.0
 script = SubResource("GDScript_5k2wo")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(5.00012, -17)
-scale = Vector2(10, 10)
+position = Vector2(1, 1)
 sprite_frames = SubResource("SpriteFrames_yjq3e")
-animation = &"Walk"
-autoplay = "Walk"
+animation = &"IDLE"
+autoplay = "IDLE"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(3.00006, -1.99998)
-scale = Vector2(10, 10)
+position = Vector2(1, 0)
 shape = SubResource("CapsuleShape2D_dmw8b")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(10, 10)
