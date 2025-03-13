@@ -3,10 +3,7 @@
 [node name="StaticBody2D" type="StaticBody2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0.500002, 2.00001)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-position = Vector2(-48, 13)
-polygon = PackedVector2Array(560, 249, 1166, 247, 1154, 98, 1191, 101, 1190, 263, 558, 278)
-
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(511, 258, 514, 73, 1104, 105, 1100, 8, 451, 7, 458, 261)
+polygon = PackedVector2Array(-523, -183, -682, -192, -628, 644, 814, 632, 784, -321, -574, -315, -646, -219, 643, -177, 631, 506, -496, 503)
