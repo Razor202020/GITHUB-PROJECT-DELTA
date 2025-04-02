@@ -98,9 +98,10 @@ script = ExtResource("1_uot3v")
 position = Vector2(1, 1)
 sprite_frames = SubResource("SpriteFrames_yjq3e")
 animation = &"Walk"
+autoplay = "Walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_dmw8b")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(8, 8)
+zoom = Vector2(5, 5)
