@@ -97,7 +97,7 @@ script = ExtResource("1_uot3v")
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(1, 1)
 sprite_frames = SubResource("SpriteFrames_yjq3e")
-animation = &"Walk"
+animation = &"IDLE"
 autoplay = "Walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
