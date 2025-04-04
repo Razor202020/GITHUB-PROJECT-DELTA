@@ -18,7 +18,7 @@ tile_data = PackedInt32Array(0, 65537, 0, 65536, 131073, 1)
 [sub_resource type="TileMapPattern" id="TileMapPattern_qs2ru"]
 tile_data = PackedInt32Array(0, 65537, 0, 65536, 65537, 1)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yqede"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_03e40"]
 texture = ExtResource("2_jhyq5")
 texture_region_size = Vector2i(50, 50)
 0:0/0 = 0
@@ -49,7 +49,7 @@ tile_size = Vector2i(50, 50)
 physics_layer_0/collision_layer = 1
 physics_layer_1/collision_layer = 2
 physics_layer_1/collision_mask = 2
-sources/1 = SubResource("TileSetAtlasSource_yqede")
+sources/1 = SubResource("TileSetAtlasSource_03e40")
 pattern_0 = SubResource("TileMapPattern_36p3d")
 pattern_1 = SubResource("TileMapPattern_yxkmx")
 pattern_2 = SubResource("TileMapPattern_wo3e2")

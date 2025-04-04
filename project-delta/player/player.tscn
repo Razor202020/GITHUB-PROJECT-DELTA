@@ -101,6 +101,7 @@ animation = &"IDLE"
 autoplay = "Walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, 3)
 shape = SubResource("CapsuleShape2D_dmw8b")
 
 [node name="Camera2D" type="Camera2D" parent="."]
