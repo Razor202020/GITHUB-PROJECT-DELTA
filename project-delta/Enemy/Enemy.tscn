@@ -125,6 +125,3 @@ polygon = PackedVector2Array(382, 99, 380, 97, 379, 98, 378, 100, 376, 100, 374,
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
 polygon = PackedVector2Array(-16, 17, -19, 18, -21, 14, -21, 12, -20, 9, -18, 5, -15, 4, -13, 5, -15, 8, -16, 10, -17, 14)
-
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Area2D"]
-polygon = PackedVector2Array(16, 8, 13, 14, 18, 12)

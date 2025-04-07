@@ -1,7 +1,7 @@
 extends CharacterBody2D
-signal laser(pos, direction)
-const SPEED = 100
-var can_laser: bool = true
+
+const SPEED = 110
+
 func _process(_delta) -> void:
 	var direction = Input.get_vector("Left", "Right", "Up", "Down")
 	velocity = direction * SPEED
@@ -14,10 +14,13 @@ func _process(_delta) -> void:
 		$Sprite2D.play("Walk")
 	if Input.is_action_just_released("Up"):
 		$Sprite2D.play("IDLE")
-	get_global_mouse_position()
-	var player_direction = (get_global_mouse_position() - position).normalized()
-	if Input.is_action_pressed("PrimaryAction") and can_laser:
-		var laser_markers = $LaserStartPositions.get_children()
-		var selected_laser = laser_markers[randi() % laser_markers.size()]
-		can_laser = false
-		laser.emit(selected_laser.global_position, player_direction)
+	if Input.is_action_pressed("Right"):
+		$Sprite2D.play("Walk-forward")
+	if Input.is_action_just_released("Right"):
+		$Sprite2D.play("IDLE")
+	if Input.is_action_pressed("Right") and Input.is_action_pressed("Down"):
+		$Sprite2D.play("Walk-forward")
+	if Input.is_action_pressed("PrimaryAction"):
+		$Sprite2D.play("gun")
+	if Input.is_action_just_released("PrimaryAction"):
+		$Sprite2D.play("IDLE")

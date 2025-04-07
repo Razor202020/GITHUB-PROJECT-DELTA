@@ -1,8 +1,9 @@
-[gd_scene load_steps=16 format=3 uid="uid://b70hv4v75lr1p"]
+[gd_scene load_steps=26 format=3 uid="uid://b70hv4v75lr1p"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_uot3v"]
 [ext_resource type="Texture2D" uid="uid://hc4xqfibasfj" path="res://assets/astro/astro.png" id="2_j2sbp"]
 [ext_resource type="Texture2D" uid="uid://cvneh63bxvy32" path="res://assets/astro/astrowalk.png" id="3_xp2ar"]
+[ext_resource type="Texture2D" uid="uid://b4i36kdyrbnlh" path="res://assets/astrosidewlk.png" id="4_gvswd"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kyvnw"]
 atlas = ExtResource("2_j2sbp")
@@ -43,6 +44,42 @@ region = Rect2(0, 0, 24, 45)
 [sub_resource type="AtlasTexture" id="AtlasTexture_xco3d"]
 atlas = ExtResource("3_xp2ar")
 region = Rect2(24, 0, 24, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_faejl"]
+atlas = ExtResource("4_gvswd")
+region = Rect2(0, 0, 29, 49)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tqwxr"]
+atlas = ExtResource("4_gvswd")
+region = Rect2(29, 0, 29, 49)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qmhyr"]
+atlas = ExtResource("4_gvswd")
+region = Rect2(58, 0, 29, 49)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rg0q7"]
+atlas = ExtResource("4_gvswd")
+region = Rect2(87, 0, 29, 49)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nxou8"]
+atlas = ExtResource("4_gvswd")
+region = Rect2(0, 49, 29, 49)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dydj6"]
+atlas = ExtResource("4_gvswd")
+region = Rect2(0, 49, 29, 49)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rhv8q"]
+atlas = ExtResource("4_gvswd")
+region = Rect2(29, 49, 29, 49)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lumqx"]
+atlas = ExtResource("4_gvswd")
+region = Rect2(58, 49, 29, 49)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fymus"]
+atlas = ExtResource("4_gvswd")
+region = Rect2(87, 49, 29, 49)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_yjq3e"]
 animations = [{
@@ -85,6 +122,48 @@ animations = [{
 "loop": true,
 "name": &"Walk",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_faejl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tqwxr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qmhyr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rg0q7")
+}],
+"loop": true,
+"name": &"Walk-forward",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nxou8")
+}],
+"loop": true,
+"name": &"gun",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dydj6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rhv8q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lumqx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fymus")
+}],
+"loop": true,
+"name": &"gun-walk",
+"speed": 5.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dmw8b"]
@@ -98,7 +177,7 @@ script = ExtResource("1_uot3v")
 position = Vector2(1, 1)
 sprite_frames = SubResource("SpriteFrames_yjq3e")
 animation = &"IDLE"
-autoplay = "Walk"
+autoplay = "IDLE"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(2, 3)
@@ -106,8 +185,3 @@ shape = SubResource("CapsuleShape2D_dmw8b")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(5, 5)
-
-[node name="LaserStartPositions" type="Node2D" parent="."]
-
-[node name="Marker2D" type="Marker2D" parent="LaserStartPositions"]
-position = Vector2(25, -7)
