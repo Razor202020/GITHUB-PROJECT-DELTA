@@ -92,4 +92,6 @@ shape = SubResource("RectangleShape2D_hh6y6")
 position = Vector2(-174, 30)
 polygon = PackedVector2Array(1290, 75, 1116, 74, 617, 73, 612, 34, 1293, 42)
 
+[node name="projectiles" type="Node2D" parent="."]
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

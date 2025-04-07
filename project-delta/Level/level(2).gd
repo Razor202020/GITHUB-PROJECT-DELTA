@@ -4,7 +4,7 @@ extends Node2D
 
 var flag = false
 func _on_area_2d_body_entered(body: Node) -> void:
-	print("first test")
+	print("second test you are in the rock demention")
 	flag = true 
 func _process(delta: float) -> void:
 	if Input.is_action_pressed("interact") and flag == true:
