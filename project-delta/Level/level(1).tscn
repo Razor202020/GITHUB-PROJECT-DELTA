@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://crq6bxvift7ix"]
+[gd_scene load_steps=15 format=4 uid="uid://crq6bxvift7ix"]
 
 [ext_resource type="Script" path="res://Level/level(1).gd" id="1_bxysj"]
 [ext_resource type="Texture2D" uid="uid://detaky58bljgd" path="res://assets/backgroundsheet (2).png" id="2_jhyq5"]
@@ -60,6 +60,9 @@ pattern_3 = SubResource("TileMapPattern_qs2ru")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hh6y6"]
 size = Vector2(34.375, 48)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5xjx1"]
+size = Vector2(130, 155)
+
 [node name="Level" type="Node2D"]
 script = ExtResource("1_bxysj")
 
@@ -78,7 +81,7 @@ collision_layer = 4
 collision_mask = 4
 
 [node name="player" parent="." instance=ExtResource("5_np57e")]
-position = Vector2(601, 164)
+position = Vector2(389, 181)
 
 [node name="Area2D" type="Area2D" parent="."]
 
@@ -89,7 +92,11 @@ shape = SubResource("RectangleShape2D_hh6y6")
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D2"]
-position = Vector2(-174, 30)
-polygon = PackedVector2Array(1290, 75, 1116, 74, 617, 73, 612, 34, 1293, 42)
+position = Vector2(-164, 37)
+polygon = PackedVector2Array(1687, 65, 376, 70, 371, 220, 310, 39, 1747, 43)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(1573, 174)
+shape = SubResource("RectangleShape2D_5xjx1")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

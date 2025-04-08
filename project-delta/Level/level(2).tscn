@@ -74,8 +74,8 @@ scale = Vector2(0.0488621, 0.130177)
 texture = ExtResource("2_uhs8r")
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
-position = Vector2(176, -67)
-scale = Vector2(0.100665, 0.0494695)
+position = Vector2(227, -65)
+scale = Vector2(0.338385, 0.0252825)
 texture = ExtResource("4_oknmv")
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -85,7 +85,7 @@ position = Vector2(228, -25)
 shape = SubResource("RectangleShape2D_p47y6")
 
 [node name="player" parent="." instance=ExtResource("2_67s3e")]
-position = Vector2(257, -24)
+position = Vector2(257, -22)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 

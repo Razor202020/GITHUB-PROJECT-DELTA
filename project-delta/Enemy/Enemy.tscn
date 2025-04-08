@@ -121,7 +121,12 @@ autoplay = "enemyWalk"
 position = Vector2(-389, -60)
 polygon = PackedVector2Array(382, 99, 380, 97, 379, 98, 378, 100, 376, 100, 374, 101, 373, 98, 375, 97, 377, 95, 379, 95, 380, 95, 383, 98)
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="claws" type="Area2D" parent="."]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="claws"]
 polygon = PackedVector2Array(-16, 17, -19, 18, -21, 14, -21, 12, -20, 9, -18, 5, -15, 4, -13, 5, -15, 8, -16, 10, -17, 14)
+
+[node name="body_mantis" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="body_mantis"]
+polygon = PackedVector2Array(-4, 2, 0, 8, 2, 25, 6, 22, 9, 17, 9, 13, 6, 3, 4, -1, -2, -2, -2, -8, -5, -9, -13, -9, -13, -1, -7, -2)
