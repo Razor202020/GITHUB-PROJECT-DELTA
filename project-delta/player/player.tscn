@@ -200,3 +200,8 @@ debug_color = Color(0.363275, 0.614763, 0.143594, 0.42)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="body"]
 polygon = PackedVector2Array(-2, -7, -2, 7, -2, 9, 6, 9, 6, -7)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.7
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
