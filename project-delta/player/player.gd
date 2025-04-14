@@ -2,7 +2,7 @@
 extends CharacterBody2D
 signal laser
 var can_laser: bool = true
-const SPEED = 110
+var SPEED = 130
 var walk = false
 var flag_r = true
 var target = false
@@ -11,6 +11,10 @@ func _process(_delta):
 	var direction = Input.get_vector("Left", "Right", "Up", "Down")
 	velocity = direction * SPEED
 	move_and_slide()
+	if Input.is_action_pressed("Sprint"):
+		SPEED = 180
+	if Input.is_action_just_released("Sprint"):
+		SPEED = 110
 	if Input.is_action_pressed("Down"):
 		$Sprite2D.play("Walk")
 	if Input.is_action_just_released("Down"):
@@ -49,3 +53,4 @@ func _process(_delta):
 		target = true
 func _on_timer_timeout():
 	can_laser = true
+	move_local_x(20)
