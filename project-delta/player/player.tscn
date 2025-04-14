@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://player/player.gd" id="1_uot3v"]
 [ext_resource type="Texture2D" uid="uid://hc4xqfibasfj" path="res://assets/astro/astro.png" id="2_j2sbp"]
 [ext_resource type="Texture2D" uid="uid://cvneh63bxvy32" path="res://assets/astro/astrowalk.png" id="3_xp2ar"]
-[ext_resource type="Texture2D" uid="uid://b4i36kdyrbnlh" path="res://assets/astrosidewlk.png" id="4_gvswd"]
+[ext_resource type="Texture2D" uid="uid://b4i36kdyrbnlh" path="res://assets/astro/astrosidewlk.png" id="4_gvswd"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kyvnw"]
 atlas = ExtResource("2_j2sbp")

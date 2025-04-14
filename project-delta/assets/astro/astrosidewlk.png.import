@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b4i36kdyrbnlh"
-path="res://.godot/imported/astrosidewlk.png-c038e08051d6b5430e08ab199f0ff857.ctex"
+path="res://.godot/imported/astrosidewlk.png-34b5ddb39270fb2feba4cf50e0017ae9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/astrosidewlk.png"
-dest_files=["res://.godot/imported/astrosidewlk.png-c038e08051d6b5430e08ab199f0ff857.ctex"]
+source_file="res://assets/astro/astrosidewlk.png"
+dest_files=["res://.godot/imported/astrosidewlk.png-34b5ddb39270fb2feba4cf50e0017ae9.ctex"]
 
 [params]
 
