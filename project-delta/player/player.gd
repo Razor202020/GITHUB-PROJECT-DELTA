@@ -23,6 +23,12 @@ func _process(_delta):
 		$Sprite2D.play("Walk")
 	if Input.is_action_just_released("Up"):
 		$Sprite2D.play("IDLE")
+	if Input.is_action_pressed("Left") and flag_r == true:
+		walk = true
+		$Sprite2D.play("walk-left")
+	if Input.is_action_just_released("Left"):
+		walk = false
+		$Sprite2D.play("IDLE")
 	if Input.is_action_pressed("Right") and flag_r == true:
 		walk = true
 		$Sprite2D.play("Walk-forward")
@@ -53,4 +59,3 @@ func _process(_delta):
 		target = true
 func _on_timer_timeout():
 	can_laser = true
-	move_local_x(20)
