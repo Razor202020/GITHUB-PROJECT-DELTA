@@ -7,7 +7,14 @@ var walk = false
 var flag_r = true
 var target = false
 var flag_movement_aim = false
+var stop = true
+var move = true
 func _process(_delta):
+	if stop == true and move == true:
+		print("move tset")
+		print(position.x)
+		position.x = 288
+		move = false
 	var direction = Input.get_vector("Left", "Right", "Up", "Down")
 	velocity = direction * SPEED
 	move_and_slide()
@@ -53,4 +60,3 @@ func _process(_delta):
 		target = true
 func _on_timer_timeout():
 	can_laser = true
-	move_local_x(20)
