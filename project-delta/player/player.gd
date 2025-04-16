@@ -6,15 +6,9 @@ var SPEED = 130
 var walk = false
 var flag_r = true
 var target = false
-var flag_movement_aim = false
-var stop = true
-var move = true
+
 func _process(_delta):
-	if stop == true and move == true:
-		print("move tset")
-		print(position.x)
-		position.x = 288
-		move = false
+
 	var direction = Input.get_vector("Left", "Right", "Up", "Down")
 	velocity = direction * SPEED
 	move_and_slide()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://crq6bxvift7ix"]
+[gd_scene load_steps=18 format=4 uid="uid://crq6bxvift7ix"]
 
 [ext_resource type="Script" path="res://Level/level(1).gd" id="1_bxysj"]
 [ext_resource type="Texture2D" uid="uid://detaky58bljgd" path="res://assets/backgroundsheet (2).png" id="2_jhyq5"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://jgbcayyhrs4e" path="res://assets/bgsheet.png" id="3_wqpv4"]
 [ext_resource type="PackedScene" uid="uid://c8lvpjoslcppl" path="res://Enemy/Enemy.tscn" id="4_yv2u8"]
 [ext_resource type="PackedScene" uid="uid://b70hv4v75lr1p" path="res://player/player.tscn" id="5_np57e"]
+[ext_resource type="PackedScene" uid="uid://cesbxsa1jnm1p" path="res://player/real_laser.tscn" id="7_sjfq5"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_36p3d"]
 tile_data = PackedInt32Array(0, 0, 2, 65536, 0, 3)
@@ -73,8 +74,10 @@ texture_region_size = Vector2i(50, 50)
 
 [sub_resource type="TileSet" id="TileSet_8566c"]
 tile_size = Vector2i(50, 50)
-physics_layer_0/collision_layer = 1
-physics_layer_1/collision_layer = 1
+physics_layer_0/collision_layer = 16
+physics_layer_0/collision_mask = 16
+physics_layer_1/collision_layer = 16
+physics_layer_1/collision_mask = 16
 sources/1 = SubResource("TileSetAtlasSource_03e40")
 sources/3 = SubResource("TileSetAtlasSource_8di8k")
 pattern_0 = SubResource("TileMapPattern_36p3d")
@@ -108,7 +111,9 @@ collision_layer = 4
 collision_mask = 4
 
 [node name="player" parent="." instance=ExtResource("5_np57e")]
-position = Vector2(669, 181)
+position = Vector2(339, 184)
+collision_layer = 17
+collision_mask = 17
 
 [node name="Area2D" type="Area2D" parent="."]
 
@@ -126,5 +131,9 @@ polygon = PackedVector2Array(1687, 65, 376, 70, 371, 220, 310, 39, 1747, 43)
 position = Vector2(1573, 174)
 shape = SubResource("RectangleShape2D_5xjx1")
 
+[node name="RealLaser" parent="." instance=ExtResource("7_sjfq5")]
+position = Vector2(491, 48)
+
 [connection signal="laser" from="player" to="." method="_on_player_laser"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
