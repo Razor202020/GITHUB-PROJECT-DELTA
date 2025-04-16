@@ -247,10 +247,11 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dmw8b"]
+radius = 9.0
 height = 42.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_magk0"]
-radius = 6.0
+radius = 7.07107
 
 [node name="player" type="CharacterBody2D"]
 script = ExtResource("1_uot3v")
@@ -262,7 +263,7 @@ animation = &"gun-left"
 autoplay = "IDLE"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(2, 2)
+position = Vector2(1, 1)
 shape = SubResource("CapsuleShape2D_dmw8b")
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -271,14 +272,15 @@ zoom = Vector2(6, 6)
 [node name="head" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="head"]
-position = Vector2(2, -13)
+position = Vector2(0, -12)
 shape = SubResource("CircleShape2D_magk0")
 debug_color = Color(0.363275, 0.614763, 0.143594, 0.42)
 
 [node name="body" type="Area2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="body"]
-polygon = PackedVector2Array(-2, -7, -2, 7, -2, 9, 6, 9, 6, -7)
+position = Vector2(-3, 0)
+polygon = PackedVector2Array(-2, -7, -2, 7, -2, 9, 7, 9, 11, 9, 13, 7, 13, 3, 13, -5, 11, -7, 9, -8)
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.7
