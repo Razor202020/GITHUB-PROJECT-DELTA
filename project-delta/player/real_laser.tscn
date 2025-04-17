@@ -3,15 +3,13 @@
 [ext_resource type="Texture2D" uid="uid://0gdc31vxtvxl" path="res://assets/astro/blu3.png" id="1_1jm7n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qnbwp"]
-size = Vector2(105.25, 50)
+size = Vector2(8.70313, 3.375)
 
 [node name="RealLaser" type="StaticBody2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(17.0362, 4.2083)
 scale = Vector2(0.0134539, 0.00627688)
 texture = ExtResource("1_1jm7n")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(48.625, 5)
 shape = SubResource("RectangleShape2D_qnbwp")
