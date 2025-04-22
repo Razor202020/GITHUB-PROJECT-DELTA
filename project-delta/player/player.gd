@@ -1,6 +1,6 @@
 #2:49:38
 extends CharacterBody2D
-signal laser
+signal laser(pos)
 var can_laser: bool = true
 var SPEED = 130
 var walk = false
@@ -37,26 +37,31 @@ func _process(_delta):
 		walk = false
 		$Sprite2D.play("IDLE")
 	if Input.is_action_pressed("PrimaryAction") and can_laser and walk == true and target == true:
+		var laser_markers = $LaserStartPositions.get_children()
+		var selected_laser = laser_markers[0]
 		flag_r = false
 		can_laser = false
 		$Sprite2D.play("gun-walk")	
 		$Timer.start()
-		laser.emit()
+		laser.emit(selected_laser.global_position)
 	if Input.is_action_just_released("PrimaryAction"):
 		$Sprite2D.play("IDLE")
 		flag_r = true
 	if Input.is_action_pressed("PrimaryAction") and walk == false and can_laser and target == true:
+		var laser_markers = $LaserStartPositions.get_children()
+		var selected_laser = laser_markers[0]
 		$Sprite2D.play("gun")
 		can_laser = false
 		$Timer.start()
-		laser.emit()
+		laser.emit(selected_laser.global_position)
 	if Input.is_action_just_released("PrimaryAction"):
 		$Sprite2D.play("IDLE")
 	if Input.is_action_just_pressed("Aim"):
+		target = true
 		$Sprite2D.play("gun")
 		print("aiming")
 	if Input.is_action_just_released("Aim"):
 		$Sprite2D.play("IDLE")
-		target = true
+		target = false
 func _on_timer_timeout():
 	can_laser = true

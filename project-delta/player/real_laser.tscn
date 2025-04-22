@@ -1,15 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://cesbxsa1jnm1p"]
+[gd_scene load_steps=4 format=3 uid="uid://cesbxsa1jnm1p"]
 
-[ext_resource type="Texture2D" uid="uid://0gdc31vxtvxl" path="res://assets/astro/blu3.png" id="1_1jm7n"]
+[ext_resource type="Script" path="res://player/real_laser.gd" id="1_15ull"]
+[ext_resource type="Texture2D" uid="uid://0gdc31vxtvxl" path="res://assets/astro/blu3.png" id="2_wde3v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qnbwp"]
-size = Vector2(8.70313, 3.375)
+size = Vector2(8.70313, 1.6875)
 
-[node name="RealLaser" type="StaticBody2D"]
+[node name="RealLaser" type="Area2D"]
+script = ExtResource("1_15ull")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.0134539, 0.00627688)
-texture = ExtResource("1_1jm7n")
+position = Vector2(4.76837e-07, 8.9407e-08)
+scale = Vector2(0.0151975, 0.00519481)
+texture = ExtResource("2_wde3v")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_qnbwp")
