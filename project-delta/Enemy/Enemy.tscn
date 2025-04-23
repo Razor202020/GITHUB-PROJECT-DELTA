@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://c8lvpjoslcppl"]
+[gd_scene load_steps=20 format=3 uid="uid://c8lvpjoslcppl"]
 
 [ext_resource type="Script" path="res://Enemy/enemy.gd" id="1_1eoe5"]
 [ext_resource type="Texture2D" uid="uid://ddxfwyc5bl5ip" path="res://assets/crimsons/sblwalk.png" id="1_t0psc"]
@@ -109,24 +109,30 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_fs635"]
+radius = 93.5361
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pob3k"]
+radius = 38.0526
+
 [node name="enemy" type="CharacterBody2D"]
 script = ExtResource("1_1eoe5")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_ifdpg")
 animation = &"enemyWalk"
-autoplay = "enemyWalk"
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-position = Vector2(-389, -60)
-polygon = PackedVector2Array(382, 99, 380, 97, 379, 98, 378, 100, 376, 100, 374, 101, 373, 98, 375, 97, 377, 95, 379, 95, 380, 95, 383, 98)
+[node name="Detection Area" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
 
-[node name="claws" type="Area2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detection Area"]
+position = Vector2(1, 13)
+shape = SubResource("CircleShape2D_fs635")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="claws"]
-polygon = PackedVector2Array(-16, 17, -19, 18, -21, 14, -21, 12, -20, 9, -18, 5, -15, 4, -13, 5, -15, 8, -16, 10, -17, 14)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(4, 16)
+shape = SubResource("CircleShape2D_pob3k")
 
-[node name="body_mantis" type="Area2D" parent="."]
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="body_mantis"]
-polygon = PackedVector2Array(-4, 2, 0, 8, 2, 25, 6, 22, 9, 17, 9, 13, 6, 3, 4, -1, -2, -2, -2, -8, -5, -9, -13, -9, -13, -1, -7, -2)
+[connection signal="body_entered" from="Detection Area" to="." method="_on_detection_area_body_entered"]
+[connection signal="body_exited" from="Detection Area" to="." method="_on_detection_area_body_exited"]
