@@ -110,24 +110,25 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fs635"]
-radius = 93.5361
+radius = 65.0077
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pob3k"]
-radius = 38.0526
+radius = 18.1108
 
 [node name="enemy" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("1_1eoe5")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_ifdpg")
 animation = &"enemyWalk"
+autoplay = "enemyWalk"
 
 [node name="Detection Area" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Detection Area"]
-position = Vector2(1, 13)
+position = Vector2(5, 14)
 shape = SubResource("CircleShape2D_fs635")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
