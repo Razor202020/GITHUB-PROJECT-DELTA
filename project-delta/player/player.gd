@@ -56,12 +56,18 @@ func _process(_delta):
 		laser.emit(selected_laser.global_position)
 	if Input.is_action_just_released("PrimaryAction"):
 		$Sprite2D.play("IDLE")
-	if Input.is_action_just_pressed("Aim"):
+	if Input.is_action_just_pressed("Aim") and position.x < get_global_mouse_position().x:
 		target = true
 		$Sprite2D.play("gun")
-		print("aiming")
+		print("right")
 	if Input.is_action_just_released("Aim"):
 		$Sprite2D.play("IDLE")
+		$Sprite2D.flip_h = false
 		target = false
+	if Input.is_action_just_pressed("Aim") and position.x > get_global_mouse_position().x:
+		target = true
+		$Sprite2D.play("gun")
+		$Sprite2D.flip_h = true
+		print("left")
 func _on_timer_timeout():
 	can_laser = true

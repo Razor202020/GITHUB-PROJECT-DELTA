@@ -19,5 +19,4 @@ func _on_player_laser(pos):
 	print("laser form level")
 	var laser = laser_scene.instantiate()
 	laser.position = pos
-	
 	$bruh.add_child(laser)
