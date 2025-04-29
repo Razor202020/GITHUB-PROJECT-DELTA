@@ -3,10 +3,9 @@ extends CharacterBody2D
 signal laser(pos)
 var can_laser: bool = true
 var SPEED = 130
-var walk = false
 var flag_r = true
 var target = false
-
+var flag_left = false
 func _process(_delta):
 
 	var direction = Input.get_vector("Left", "Right", "Up", "Down")
@@ -24,50 +23,43 @@ func _process(_delta):
 		$Sprite2D.play("Walk")
 	if Input.is_action_just_released("Up"):
 		$Sprite2D.play("IDLE")
-	if Input.is_action_pressed("Left") and flag_r == true:
-		walk = true
+	if Input.is_action_pressed("Left"):#and flag_r == true:
 		$Sprite2D.play("walk-left")
 	if Input.is_action_just_released("Left"):
-		walk = false
 		$Sprite2D.play("IDLE")
-	if Input.is_action_pressed("Right") and flag_r == true:
-		walk = true
+	if Input.is_action_pressed("Right"):# and flag_r == true:
 		$Sprite2D.play("Walk-forward")
 	if Input.is_action_just_released("Right"):
-		walk = false
 		$Sprite2D.play("IDLE")
-	if Input.is_action_pressed("PrimaryAction") and can_laser and walk == true and target == true:
-		var laser_markers = $LaserStartPositions.get_children()
-		var selected_laser = laser_markers[0]
-		flag_r = false
-		can_laser = false
-		$Sprite2D.play("gun-walk")	
-		$Timer.start()
-		laser.emit(selected_laser.global_position)
 	if Input.is_action_just_released("PrimaryAction"):
 		$Sprite2D.play("IDLE")
-		flag_r = true
-	if Input.is_action_pressed("PrimaryAction") and walk == false and can_laser and target == true:
+		#flag_r = true
+	if Input.is_action_pressed("PrimaryAction") and can_laser and target == true:
 		var laser_markers = $LaserStartPositions.get_children()
 		var selected_laser = laser_markers[0]
 		$Sprite2D.play("gun")
 		can_laser = false
 		$Timer.start()
+		if $Sprite2D.flip_h == true:
+			selected_laser = laser_markers[1]
 		laser.emit(selected_laser.global_position)
 	if Input.is_action_just_released("PrimaryAction"):
 		$Sprite2D.play("IDLE")
 	if Input.is_action_just_pressed("Aim") and position.x < get_global_mouse_position().x:
 		target = true
 		$Sprite2D.play("gun")
+		Globals.player_direction = 'right'
 		print("right")
 	if Input.is_action_just_released("Aim"):
-		$Sprite2D.play("IDLE")
 		$Sprite2D.flip_h = false
+		$Sprite2D.play("IDLE")
 		target = false
 	if Input.is_action_just_pressed("Aim") and position.x > get_global_mouse_position().x:
 		target = true
-		$Sprite2D.play("gun")
 		$Sprite2D.flip_h = true
+		$Sprite2D.play("gun")
+		Globals.player_direction = 'left'
 		print("left")
+	print($Sprite2D.flip_h)
 func _on_timer_timeout():
 	can_laser = true

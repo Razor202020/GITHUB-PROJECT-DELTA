@@ -6,6 +6,7 @@ func _on_area_2d_body_entered(_body):
 	flag = true 
 
 func _process(_delta):
+	get_global_mouse_position()
 	if Input.is_action_pressed("interact") and flag == true:
 		flag = false
 		get_tree().change_scene_to_file("res://Level/level(1).tscn")
