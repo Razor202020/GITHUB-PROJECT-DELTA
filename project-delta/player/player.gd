@@ -60,6 +60,5 @@ func _process(_delta):
 		$Sprite2D.play("gun")
 		Globals.player_direction = 'left'
 		print("left")
-	print($Sprite2D.flip_h)
 func _on_timer_timeout():
 	can_laser = true
