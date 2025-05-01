@@ -110,10 +110,10 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fs635"]
-radius = 41.0
+radius = 36.6197
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pob3k"]
-radius = 4.12311
+radius = 5.0
 
 [node name="enemy" type="CharacterBody2D"]
 collision_layer = 2
@@ -128,11 +128,11 @@ autoplay = "enemyWalk"
 [node name="Detection Area" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Detection Area"]
-position = Vector2(5, 14)
+position = Vector2(5, 15)
 shape = SubResource("CircleShape2D_fs635")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(179, -98)
+position = Vector2(-54, 13)
 shape = SubResource("CircleShape2D_pob3k")
 
 [connection signal="body_entered" from="Detection Area" to="." method="_on_detection_area_body_entered"]
