@@ -4,15 +4,18 @@
 [ext_resource type="Texture2D" uid="uid://d2iuh556cpnk0" path="res://assets/astro/pew.png" id="2_dolau"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qnbwp"]
-size = Vector2(8.70313, 1.6875)
+size = Vector2(9.35156, 1.6875)
 
-[node name="RealLaser" type="Area2D"]
+[node name="RealLaser" type="Node2D"]
 script = ExtResource("1_15ull")
+speed = 500
 
 [node name="LaserSprite" type="Sprite2D" parent="."]
 position = Vector2(-3, 0)
 scale = Vector2(3, 1)
 texture = ExtResource("2_dolau")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="laser_hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="laser_hitbox"]
 shape = SubResource("RectangleShape2D_qnbwp")

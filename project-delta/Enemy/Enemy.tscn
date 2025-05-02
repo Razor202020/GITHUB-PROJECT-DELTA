@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://c8lvpjoslcppl"]
+[gd_scene load_steps=21 format=3 uid="uid://c8lvpjoslcppl"]
 
 [ext_resource type="Script" path="res://Enemy/enemy.gd" id="1_1eoe5"]
 [ext_resource type="Texture2D" uid="uid://ddxfwyc5bl5ip" path="res://assets/crimsons/sblwalk.png" id="1_t0psc"]
@@ -110,10 +110,13 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fs635"]
-radius = 36.6197
+radius = 40.0125
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_pob3k"]
-radius = 5.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_mxya0"]
+radius = 16.0312
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nu40q"]
+radius = 5.09902
 
 [node name="enemy" type="CharacterBody2D"]
 collision_layer = 2
@@ -131,9 +134,15 @@ autoplay = "enemyWalk"
 position = Vector2(5, 15)
 shape = SubResource("CircleShape2D_fs635")
 
+[node name="Enemy_Hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy_Hitbox"]
+position = Vector2(5, 15)
+shape = SubResource("CircleShape2D_mxya0")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-54, 13)
-shape = SubResource("CircleShape2D_pob3k")
+position = Vector2(5, 15)
+shape = SubResource("CircleShape2D_nu40q")
 
 [connection signal="body_entered" from="Detection Area" to="." method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="Detection Area" to="." method="_on_detection_area_body_exited"]

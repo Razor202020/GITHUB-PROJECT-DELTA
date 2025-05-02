@@ -6,6 +6,8 @@ var SPEED = 130
 var flag_r = true
 var target = false
 var flag_left = false
+var health = 100
+var Player_Alive = true
 func _process(_delta):
 
 	var direction = Input.get_vector("Left", "Right", "Up", "Down")
