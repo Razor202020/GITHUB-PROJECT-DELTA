@@ -123,16 +123,16 @@ pattern_12 = SubResource("TileMapPattern_ckjs3")
 size = Vector2(34.375, 48)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5xjx1"]
-size = Vector2(36, 147)
+size = Vector2(36, 280)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kw8xw"]
-size = Vector2(1362, 34)
+size = Vector2(1384, 34)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xo655"]
-size = Vector2(35, 478)
+size = Vector2(35, 340)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1j1sd"]
-size = Vector2(1412, 20)
+size = Vector2(1389, 20)
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_dq46g")
@@ -160,19 +160,19 @@ shape = SubResource("RectangleShape2D_hh6y6")
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
-position = Vector2(1569, 174.5)
+position = Vector2(1569, 241)
 shape = SubResource("RectangleShape2D_5xjx1")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D2"]
-position = Vector2(882, 400)
+position = Vector2(893, 400)
 shape = SubResource("RectangleShape2D_kw8xw")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D2"]
-position = Vector2(183, 258)
+position = Vector2(183, 247)
 shape = SubResource("RectangleShape2D_xo655")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D2"]
-position = Vector2(905, 88)
+position = Vector2(893.5, 88)
 shape = SubResource("RectangleShape2D_1j1sd")
 
 [connection signal="laser" from="player" to="." method="_on_player_laser"]
