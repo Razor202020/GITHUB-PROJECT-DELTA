@@ -6,16 +6,18 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qnbwp"]
 size = Vector2(9.35156, 1.6875)
 
-[node name="RealLaser" type="Node2D"]
+[node name="RealLaser" type="Area2D"]
 script = ExtResource("1_15ull")
 speed = 500
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_qnbwp")
 
 [node name="LaserSprite" type="Sprite2D" parent="."]
 position = Vector2(-3, 0)
 scale = Vector2(3, 1)
 texture = ExtResource("2_dolau")
 
-[node name="laser_hitbox" type="Area2D" parent="."]
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="laser_hitbox"]
-shape = SubResource("RectangleShape2D_qnbwp")
+[connection signal="screen_exited" from="VisibleOnScreenEnabler2D" to="." method="_on_visible_on_screen_enabler_2d_screen_exited"]

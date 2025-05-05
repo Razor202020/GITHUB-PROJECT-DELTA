@@ -64,3 +64,5 @@ func _process(_delta):
 		print("left")
 func _on_timer_timeout():
 	can_laser = true
+func player():
+	pass
