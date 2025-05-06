@@ -2,7 +2,7 @@ extends Node2D
 var laser_scene: PackedScene = preload("res://player/real_laser.tscn")
 var flag = false
 func _on_area_2d_body_entered(_body):
-	print("first test2")
+	print("level3")
 	flag = true	
 func _process(_delta):
 	get_global_mouse_position()

@@ -29,11 +29,6 @@ func _on_detection_area_body_entered(body):
 func _on_detection_area_body_exited(body):
 	if body.has_method("player"):
 		player_chase = false
-
-
-#1403
-
-
 func _on_enemy_hitbox_area_entered(area):
 	var damage
 	if area.has_method("laser_deal_damage"):
@@ -47,3 +42,5 @@ func death():
 	dead = true
 	await get_tree().create_timer(1).timeout
 	queue_free()
+func enemy():
+	pass
