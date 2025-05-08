@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=4 uid="uid://dp343j1hfvw5k"]
+[gd_scene load_steps=24 format=4 uid="uid://dp343j1hfvw5k"]
 
 [ext_resource type="Script" path="res://Level/level(1)(1).gd" id="1_ksfju"]
 [ext_resource type="Texture2D" uid="uid://detaky58bljgd" path="res://assets/backgroundsheet (2).png" id="2_cfihd"]
@@ -119,8 +119,6 @@ pattern_10 = SubResource("TileMapPattern_worv2")
 pattern_11 = SubResource("TileMapPattern_wfdgi")
 pattern_12 = SubResource("TileMapPattern_ckjs3")
 
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_7gc45"]
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hh6y6"]
 size = Vector2(34.375, 48)
 
@@ -141,21 +139,6 @@ collision_mask = 19
 
 [node name="enemy" parent="." instance=ExtResource("5_0kfmv")]
 position = Vector2(921, 168)
-
-[node name="StaticBody2D" parent="."]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-material = SubResource("CanvasItemMaterial_7gc45")
-position = Vector2(863, 274)
-scale = Vector2(0.3, 0.3)
-script = null
 
 [node name="projectiles" type="Node2D" parent="."]
 

@@ -2,6 +2,7 @@
 extends CharacterBody2D
 signal laser(pos)
 var enemy_inAttack_range = false
+var enemy_attack_cooldown = true
 var can_laser: bool = true
 var SPEED = 130
 var flag_r = true
@@ -9,11 +10,11 @@ var target = false
 var flag_left = false
 var health = 100
 var Player_Alive = true
-func _process(_delta):
-	enemy_attack()
+func _process(float):
 	var direction = Input.get_vector("Left", "Right", "Up", "Down")
 	velocity = direction * SPEED
 	move_and_slide()
+	enemy_attack()
 	if Input.is_action_pressed("Sprint"):
 		SPEED = 180
 	if Input.is_action_just_released("Sprint"):
@@ -68,25 +69,17 @@ func _on_timer_timeout():
 func player():
 	pass
 
-
 func _on_player_hitbox_body_entered(body):
-	pass
-
+	if body.has_method("enemy"):
+		print("is in enemy")
+		enemy_inAttack_range = true
+#5:56
 
 func _on_player_hitbox_body_exited(body):
-	pass
-func enemy_attack():
-	if enemy_inAttack_range == true:
-		print("player tookj damage")
-
-
-func _on_player_hitbox_area_entered(body):
-		if body.has_method("enemy"):
-			enemy_inAttack_range = true
-			print("enemy is here run")
-
-
-
-func _on_player_hitbox_area_exited(body):
 	if body.has_method("enemy"):
+		print("not in enemy")
 		enemy_inAttack_range = false
+		
+func enemy_attack():
+	if enemy_inAttack_range:
+		print("player took damage")
