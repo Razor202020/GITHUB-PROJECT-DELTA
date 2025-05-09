@@ -8,13 +8,17 @@ var SPEED = 130
 var flag_r = true
 var target = false
 var flag_left = false
-var health = 100
+var health = Globals.player_health
 var Player_Alive = true
 func _process(float):
 	var direction = Input.get_vector("Left", "Right", "Up", "Down")
 	velocity = direction * SPEED
 	move_and_slide()
 	enemy_attack()
+	if health <= 0:
+		Player_Alive = false #add end screen
+		health = 0
+		self.queue_free()
 	if Input.is_action_pressed("Sprint"):
 		SPEED = 180
 	if Input.is_action_just_released("Sprint"):
@@ -27,17 +31,16 @@ func _process(float):
 		$Sprite2D.play("Walk")
 	if Input.is_action_just_released("Up"):
 		$Sprite2D.play("IDLE")
-	if Input.is_action_pressed("Left"):#and flag_r == true:
+	if Input.is_action_pressed("Left"):
 		$Sprite2D.play("walk-left")
 	if Input.is_action_just_released("Left"):
 		$Sprite2D.play("IDLE")
-	if Input.is_action_pressed("Right"):# and flag_r == true:
+	if Input.is_action_pressed("Right"):
 		$Sprite2D.play("Walk-forward")
 	if Input.is_action_just_released("Right"):
 		$Sprite2D.play("IDLE")
 	if Input.is_action_just_released("PrimaryAction"):
 		$Sprite2D.play("IDLE")
-		#flag_r = true
 	if Input.is_action_pressed("PrimaryAction") and can_laser and target == true:
 		var laser_markers = $LaserStartPositions.get_children()
 		var selected_laser = laser_markers[0]
@@ -69,17 +72,26 @@ func _on_timer_timeout():
 func player():
 	pass
 
-func _on_player_hitbox_body_entered(body):
-	if body.has_method("enemy"):
+func enemy_attack():
+	if enemy_inAttack_range and enemy_attack_cooldown == true:
+		health -= 20
+		Globals.player_health = health
+		enemy_attack_cooldown = false
+		$attack_cooldown.start()
+		print(health)
+
+
+func _on_player_hitbox_area_entered(area):
+	if area.has_method("enemy"):
 		print("is in enemy")
 		enemy_inAttack_range = true
-#5:56
 
-func _on_player_hitbox_body_exited(body):
-	if body.has_method("enemy"):
+
+func _on_player_hitbox_area_exited(area):
+	if area.has_method("enemy"):
 		print("not in enemy")
 		enemy_inAttack_range = false
-		
-func enemy_attack():
-	if enemy_inAttack_range:
-		print("player took damage")
+
+
+func _on_attack_cooldown_timeout():
+	enemy_attack_cooldown = true
