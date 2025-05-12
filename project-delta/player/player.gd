@@ -19,16 +19,36 @@ func _process(float):
 		Player_Alive = false #add end screen
 		health = 0
 		self.queue_free()
-	if Input.is_action_pressed("Sprint"):
+	if Input.is_action_pressed("Sprint") and Input.is_action_just_pressed("Right"):
 		SPEED = 180
+		$Sprite2D.play("Walk but faster")
+	if Input.is_action_just_released("Sprint") and Input.is_action_just_released("Right"):
+		SPEED = 110
+		$Sprite2D.play("IDLE")
+	if Input.is_action_pressed("Sprint") and Input.is_action_just_pressed("Left"):
+		SPEED = 180
+		$Sprite2D.flip_h = true
+		$Sprite2D.play("Walk but faster")
+	if Input.is_action_just_released("Sprint") and Input.is_action_just_released("Left"):
+		SPEED = 110
+		$Sprite2D.flip_h = false
+		$Sprite2D.play("IDLE")
 	if Input.is_action_just_released("Sprint"):
 		SPEED = 110
 	if Input.is_action_pressed("Down"):
 		$Sprite2D.play("Walk")
+	if Input.is_action_pressed("Down") and Input.is_action_just_pressed("Right"):
+		$Sprite2D.play("Walk-forward")
+	if Input.is_action_pressed("Down") and Input.is_action_just_pressed("Left"):
+		$Sprite2D.play("walk-left")
 	if Input.is_action_just_released("Down"):
 		$Sprite2D.play("IDLE")
 	if Input.is_action_pressed("Up"):
 		$Sprite2D.play("Walk")
+	if Input.is_action_pressed("Up") and Input.is_action_just_pressed("Right"):
+		$Sprite2D.play("Walk-forward")
+	if Input.is_action_pressed("Up") and Input.is_action_just_pressed("Left"):
+		$Sprite2D.play("walk-left")
 	if Input.is_action_just_released("Up"):
 		$Sprite2D.play("IDLE")
 	if Input.is_action_pressed("Left"):
@@ -71,7 +91,6 @@ func _on_timer_timeout():
 	can_laser = true
 func player():
 	pass
-
 func enemy_attack():
 	if enemy_inAttack_range and enemy_attack_cooldown == true:
 		health -= 20
@@ -79,19 +98,13 @@ func enemy_attack():
 		enemy_attack_cooldown = false
 		$attack_cooldown.start()
 		print(health)
-
-
 func _on_player_hitbox_area_entered(area):
 	if area.has_method("enemy"):
 		print("is in enemy")
 		enemy_inAttack_range = true
-
-
 func _on_player_hitbox_area_exited(area):
 	if area.has_method("enemy"):
 		print("not in enemy")
 		enemy_inAttack_range = false
-
-
 func _on_attack_cooldown_timeout():
 	enemy_attack_cooldown = true

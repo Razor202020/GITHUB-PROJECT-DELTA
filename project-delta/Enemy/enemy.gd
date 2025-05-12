@@ -1,7 +1,7 @@
 extends CharacterBody2D
-var Speed = 130
+var Speed = 100
 
-var health = Globals.Jeff_1_health
+var health = 100
 
 var dead = false
 var player_chase = false
@@ -23,6 +23,7 @@ func _physics_process(delta):
 	if health == 0:
 		death()
 		
+		
 func _on_detection_area_body_entered(body):
 	if body.has_method("player"):
 		player_chase = true
@@ -34,12 +35,12 @@ func _on_detection_area_body_exited(body):
 func _on_enemy_hitbox_area_entered(area):
 	var damage
 	if area.has_method("laser_deal_damage"):
-		damage = 20
+		damage = 100
 		take_damage(damage)
 		print(health)
 func take_damage(damage):
 	health -= damage
-	Globals.Jeff_1_health = health
+	#Globals.Jeff_1_health = health
 	if health <= 0 and !dead:
 		health = 0
 		death()
