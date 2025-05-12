@@ -1,8 +1,41 @@
-[gd_scene load_steps=22 format=3 uid="uid://c8lvpjoslcppl"]
+[gd_scene load_steps=31 format=3 uid="uid://c8lvpjoslcppl"]
 
 [ext_resource type="Script" path="res://Enemy/enemy.gd" id="1_1eoe5"]
 [ext_resource type="Texture2D" uid="uid://ddxfwyc5bl5ip" path="res://assets/crimsons/sblwalk.png" id="1_t0psc"]
+[ext_resource type="Texture2D" uid="uid://bxmkj1qr0cxux" path="res://assets/crimsons/crmsnidle.png" id="2_1e2tc"]
 [ext_resource type="Script" path="res://Enemy/enemy_hitbox.gd" id="3_0udjp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_srkdq"]
+atlas = ExtResource("2_1e2tc")
+region = Rect2(0, 0, 80, 88)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3h4y3"]
+atlas = ExtResource("2_1e2tc")
+region = Rect2(80, 0, 80, 88)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xmv84"]
+atlas = ExtResource("2_1e2tc")
+region = Rect2(160, 0, 80, 88)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qrd6t"]
+atlas = ExtResource("2_1e2tc")
+region = Rect2(0, 88, 80, 88)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_345hq"]
+atlas = ExtResource("2_1e2tc")
+region = Rect2(80, 88, 80, 88)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ucypt"]
+atlas = ExtResource("2_1e2tc")
+region = Rect2(160, 88, 80, 88)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2yvei"]
+atlas = ExtResource("2_1e2tc")
+region = Rect2(0, 176, 80, 88)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w63ah"]
+atlas = ExtResource("2_1e2tc")
+region = Rect2(80, 176, 80, 88)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0r1o8"]
 atlas = ExtResource("1_t0psc")
@@ -64,6 +97,35 @@ region = Rect2(94, 198, 94, 99)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_srkdq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3h4y3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xmv84")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qrd6t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_345hq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ucypt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2yvei")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w63ah")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_0r1o8")
 }, {
 "duration": 1.0,
@@ -107,7 +169,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"enemyWalk",
-"speed": 5.0
+"speed": 15.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fs635"]
@@ -128,6 +190,7 @@ script = ExtResource("1_1eoe5")
 position = Vector2(-3, 1)
 sprite_frames = SubResource("SpriteFrames_ifdpg")
 animation = &"enemyWalk"
+autoplay = "Idle"
 
 [node name="DetectionArea" type="Area2D" parent="."]
 

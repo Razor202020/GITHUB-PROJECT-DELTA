@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://b70hv4v75lr1p"]
+[gd_scene load_steps=40 format=3 uid="uid://b70hv4v75lr1p"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_uot3v"]
 [ext_resource type="Texture2D" uid="uid://hc4xqfibasfj" path="res://assets/astro/astro.png" id="2_j2sbp"]
@@ -98,6 +98,22 @@ region = Rect2(58, 49, 29, 49)
 atlas = ExtResource("4_ik7uk")
 region = Rect2(87, 49, 29, 49)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_ng506"]
+atlas = ExtResource("6_0o1jc")
+region = Rect2(0, 0, 29, 49)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vj2jf"]
+atlas = ExtResource("6_0o1jc")
+region = Rect2(29, 0, 29, 49)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6lq83"]
+atlas = ExtResource("6_0o1jc")
+region = Rect2(58, 0, 29, 49)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rdiar"]
+atlas = ExtResource("6_0o1jc")
+region = Rect2(87, 0, 29, 49)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_5877f"]
 atlas = ExtResource("6_0o1jc")
 region = Rect2(0, 0, 29, 49)
@@ -171,7 +187,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"Walk but faster",
-"speed": 100.0
+"speed": 40.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -217,6 +233,23 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_ng506")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vj2jf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6lq83")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rdiar")
+}],
+"loop": true,
+"name": &"walk but faster left",
+"speed": 40.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_5877f")
 }, {
 "duration": 1.0,
@@ -250,7 +283,7 @@ script = ExtResource("1_uot3v")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_yjq3e")
-animation = &"Walk-forward"
+animation = &"gun"
 autoplay = "IDLE"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

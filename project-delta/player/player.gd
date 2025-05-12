@@ -1,4 +1,5 @@
 #2:49:38
+#put the actuall shooting mechanic inside the aim mechanic for tommorrow
 extends CharacterBody2D
 signal laser(pos)
 var enemy_inAttack_range = false
@@ -19,48 +20,68 @@ func _process(float):
 		Player_Alive = false #add end screen
 		health = 0
 		self.queue_free()
-	if Input.is_action_pressed("Sprint") and Input.is_action_just_pressed("Right"):
-		SPEED = 180
-		$Sprite2D.play("Walk but faster")
-	if Input.is_action_just_released("Sprint") and Input.is_action_just_released("Right"):
-		SPEED = 110
-		$Sprite2D.play("IDLE")
-	if Input.is_action_pressed("Sprint") and Input.is_action_just_pressed("Left"):
-		SPEED = 180
-		$Sprite2D.flip_h = true
-		$Sprite2D.play("Walk but faster")
-	if Input.is_action_just_released("Sprint") and Input.is_action_just_released("Left"):
-		SPEED = 110
-		$Sprite2D.flip_h = false
-		$Sprite2D.play("IDLE")
-	if Input.is_action_just_released("Sprint"):
-		SPEED = 110
+#Down movement
 	if Input.is_action_pressed("Down"):
-		$Sprite2D.play("Walk")
-	if Input.is_action_pressed("Down") and Input.is_action_just_pressed("Right"):
-		$Sprite2D.play("Walk-forward")
-	if Input.is_action_pressed("Down") and Input.is_action_just_pressed("Left"):
-		$Sprite2D.play("walk-left")
+		if Input.is_action_pressed("Right"):
+			if Input.is_action_pressed("Sprint"):
+				SPEED = 180
+				$Sprite2D.play("Walk but faster")
+			else:
+				SPEED = 130
+				$Sprite2D.play("Walk-forward")
+		elif Input.is_action_pressed("Left"):
+			if Input.is_action_pressed("Sprint"):
+				SPEED = 180
+				$Sprite2D.play("walk but faster left")
+			else:
+				SPEED = 130
+				$Sprite2D.play("walk-left")
+		else:
+			$Sprite2D.play("Walk")
 	if Input.is_action_just_released("Down"):
 		$Sprite2D.play("IDLE")
+#UP MOvemnet
 	if Input.is_action_pressed("Up"):
-		$Sprite2D.play("Walk")
-	if Input.is_action_pressed("Up") and Input.is_action_just_pressed("Right"):
-		$Sprite2D.play("Walk-forward")
-	if Input.is_action_pressed("Up") and Input.is_action_just_pressed("Left"):
-		$Sprite2D.play("walk-left")
+		if Input.is_action_pressed("Right"):
+			if Input.is_action_pressed("Sprint"):
+				SPEED = 180
+				$Sprite2D.play("Walk but faster")
+			else:
+				SPEED = 130
+				$Sprite2D.play("Walk-forward")
+		elif Input.is_action_pressed("Left"):
+			if Input.is_action_pressed("Sprint"):
+				SPEED = 180
+				$Sprite2D.play("walk but faster left")
+			else:
+				SPEED = 130
+				$Sprite2D.play("walk-left")
+		else:
+			$Sprite2D.play("Walk")
 	if Input.is_action_just_released("Up"):
-		$Sprite2D.play("IDLE")
+		$Sprite2D.play("IDLE")	
+#Left Movement
 	if Input.is_action_pressed("Left"):
-		$Sprite2D.play("walk-left")
+		if Input.is_action_pressed("Sprint"):
+			SPEED = 180
+			$Sprite2D.play("walk but faster left")
+		else:
+			SPEED = 130
+			$Sprite2D.play("walk-left")
 	if Input.is_action_just_released("Left"):
-		$Sprite2D.play("IDLE")
+		$Sprite2D.play("IDLE")		
+#Right Movement
 	if Input.is_action_pressed("Right"):
-		$Sprite2D.play("Walk-forward")
+		if Input.is_action_pressed("Sprint"):
+			SPEED = 180
+			$Sprite2D.play("Walk but faster")
+		else:
+			SPEED = 130
+			$Sprite2D.play("Walk-forward")
 	if Input.is_action_just_released("Right"):
 		$Sprite2D.play("IDLE")
-	if Input.is_action_just_released("PrimaryAction"):
-		$Sprite2D.play("IDLE")
+#GUN ACTIONS
+	#Shooting The Laser
 	if Input.is_action_pressed("PrimaryAction") and can_laser and target == true:
 		var laser_markers = $LaserStartPositions.get_children()
 		var selected_laser = laser_markers[0]
@@ -72,21 +93,27 @@ func _process(float):
 		laser.emit(selected_laser.global_position)
 	if Input.is_action_just_released("PrimaryAction"):
 		$Sprite2D.play("IDLE")
+	#AimING and walking with the gun
 	if Input.is_action_just_pressed("Aim") and position.x < get_global_mouse_position().x:
 		target = true
 		$Sprite2D.play("gun")
 		Globals.player_direction = 'right'
 		print("right")
-	if Input.is_action_just_released("Aim"):
-		$Sprite2D.flip_h = false
-		$Sprite2D.play("IDLE")
-		target = false
 	if Input.is_action_just_pressed("Aim") and position.x > get_global_mouse_position().x:
 		target = true
 		$Sprite2D.flip_h = true
 		$Sprite2D.play("gun")
 		Globals.player_direction = 'left'
 		print("left")
+	if Input.is_action_just_released("Aim") and position.x < get_global_mouse_position().x:
+		$Sprite2D.flip_h = false
+		$Sprite2D.play("IDLE")
+		target = false
+	if Input.is_action_just_released("Aim") and position.x > get_global_mouse_position().x:
+		$Sprite2D.flip_h = false
+		$Sprite2D.play("IDLE")
+		target = false
+#Combat System
 func _on_timer_timeout():
 	can_laser = true
 func player():
