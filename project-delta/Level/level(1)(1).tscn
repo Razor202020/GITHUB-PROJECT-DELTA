@@ -142,12 +142,12 @@ tile_map_data = PackedByteArray("AAAMAAQAAwADAAIAAAANAAQAAwACAAIAAAAPAAQAAwABAAI
 tile_set = SubResource("TileSet_8566c")
 
 [node name="player" parent="." instance=ExtResource("4_oatnb")]
-position = Vector2(376, 190)
+position = Vector2(233, 226)
 collision_layer = 19
 collision_mask = 19
 
 [node name="enemy" parent="." instance=ExtResource("5_h4wiv")]
-position = Vector2(617, 183)
+position = Vector2(1397, 223)
 
 [node name="projectiles" type="Node2D" parent="."]
 

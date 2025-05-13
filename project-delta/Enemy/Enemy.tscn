@@ -173,7 +173,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fs635"]
-radius = 78.0256
+radius = 139.058
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1llxb"]
 radius = 18.0
@@ -206,7 +206,7 @@ script = ExtResource("3_0udjp")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy_Hitbox"]
 light_mask = 2
 visibility_layer = 2
-position = Vector2(4, 15)
+position = Vector2(-3, 9)
 shape = SubResource("CircleShape2D_1llxb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

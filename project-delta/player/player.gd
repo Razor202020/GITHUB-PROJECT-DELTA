@@ -1,5 +1,3 @@
-#2:49:38
-#put the actuall shooting mechanic inside the aim mechanic for tommorrow
 extends CharacterBody2D
 signal laser(pos)
 var enemy_inAttack_range = false
@@ -87,35 +85,30 @@ func _process(float):
 		var selected_laser = laser_markers[0]
 		$Sprite2D.play("gun")
 		can_laser = false
-		$Timer.start()
-		if $Sprite2D.flip_h == true:
+		$FireRate.start()
+		if position.x > get_global_mouse_position().x:
 			selected_laser = laser_markers[1]
 		laser.emit(selected_laser.global_position)
 	if Input.is_action_just_released("PrimaryAction"):
 		$Sprite2D.play("IDLE")
 	#AimING and walking with the gun
-	if Input.is_action_just_pressed("Aim") and position.x < get_global_mouse_position().x:
+	#GUn facing Right
+	if Input.is_action_pressed("Aim") and position.x < get_global_mouse_position().x:
 		target = true
 		$Sprite2D.play("gun")
 		Globals.player_direction = 'right'
-		print("right")
-	if Input.is_action_just_pressed("Aim") and position.x > get_global_mouse_position().x:
-		target = true
-		$Sprite2D.flip_h = true
-		$Sprite2D.play("gun")
-		Globals.player_direction = 'left'
-		print("left")
 	if Input.is_action_just_released("Aim") and position.x < get_global_mouse_position().x:
-		$Sprite2D.flip_h = false
 		$Sprite2D.play("IDLE")
 		target = false
+	# gun facing LEft
+	if Input.is_action_pressed("Aim") and position.x > get_global_mouse_position().x:
+		target = true
+		$Sprite2D.play("gun-left")
+		Globals.player_direction = 'left'
 	if Input.is_action_just_released("Aim") and position.x > get_global_mouse_position().x:
-		$Sprite2D.flip_h = false
 		$Sprite2D.play("IDLE")
 		target = false
 #Combat System
-func _on_timer_timeout():
-	can_laser = true
 func player():
 	pass
 func enemy_attack():
@@ -135,3 +128,5 @@ func _on_player_hitbox_area_exited(area):
 		enemy_inAttack_range = false
 func _on_attack_cooldown_timeout():
 	enemy_attack_cooldown = true
+func _on_fire_rate_timeout():
+	can_laser = true

@@ -1,41 +1,38 @@
 extends CharacterBody2D
-var Speed = 50
-
+var Speed = 80
 var health = 100
-
 var dead = false
 var player_chase = false
 var player = null
-
 func _ready():
 	dead = false
-
 func _physics_process(delta):
 	if !dead:
 		$DetectionArea/CollisionShape2D.disabled = false
 		if player_chase:
 			position += (player.position - position)/Speed
 			$AnimatedSprite2D.play("enemyWalk")
+			if(player.position.x - position.x) < 0:
+				$AnimatedSprite2D.flip_h = false
+			else:
+				$AnimatedSprite2D.flip_h = true
 		else:
-			pass
+			$AnimatedSprite2D.play("Idle")
 	if dead:
 		$DetectionArea/CollisionShape2D.disabled = true
 	if health == 0:
 		death()
-		
-		
 func _on_detection_area_body_entered(body):
 	if body.has_method("player"):
 		player_chase = true
 		player = body
-
 func _on_detection_area_body_exited(body):
 	if body.has_method("player"):
 		player_chase = false
 func _on_enemy_hitbox_area_entered(area):
 	var damage
 	if area.has_method("laser_deal_damage"):
-		damage = 100
+		damage = 20
 		take_damage(damage)
 		print(health)
 func take_damage(damage):
