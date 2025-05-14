@@ -1,4 +1,5 @@
 extends CharacterBody2D
+#zoom  66
 signal laser(pos)
 var enemy_inAttack_range = false
 var enemy_attack_cooldown = true
