@@ -17,6 +17,7 @@ func _physics_process(delta):
 			else:
 				$AnimatedSprite2D.flip_h = true
 		else:
+			await get_tree().create_timer(0.5).timeout
 			$AnimatedSprite2D.play("Idle")
 	if dead:
 		$DetectionArea/CollisionShape2D.disabled = true
