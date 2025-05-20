@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://jgbcayyhrs4e"
-path="res://.godot/imported/bgsheet.png-c950d458e8b48362c6ed7a83dd62b101.ctex"
+uid="uid://buyqjsbkhabvk"
+path="res://.godot/imported/crmsnidlewalk.png-da45b0bb97c5cf5b0dbbfdc3a8f9c6c4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/bgsheet.png"
-dest_files=["res://.godot/imported/bgsheet.png-c950d458e8b48362c6ed7a83dd62b101.ctex"]
+source_file="res://assets/crimsons/crmsnidlewalk.png"
+dest_files=["res://.godot/imported/crmsnidlewalk.png-da45b0bb97c5cf5b0dbbfdc3a8f9c6c4.ctex"]
 
 [params]
 

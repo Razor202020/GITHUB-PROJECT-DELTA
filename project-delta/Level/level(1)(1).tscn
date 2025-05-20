@@ -1,8 +1,8 @@
 [gd_scene load_steps=27 format=4 uid="uid://dc5prgojrqgm7"]
 
 [ext_resource type="Script" path="res://Level/level(1)(1).gd" id="1_dq46g"]
-[ext_resource type="Texture2D" uid="uid://detaky58bljgd" path="res://assets/backgroundsheet (2).png" id="2_e3ynh"]
-[ext_resource type="Texture2D" uid="uid://jgbcayyhrs4e" path="res://assets/bgsheet.png" id="3_e10gd"]
+[ext_resource type="Texture2D" uid="uid://detaky58bljgd" path="res://assets/environment/backgroundsheet (2).png" id="2_e3ynh"]
+[ext_resource type="Texture2D" uid="uid://jgbcayyhrs4e" path="res://assets/environment/bgsheet.png" id="3_e10gd"]
 [ext_resource type="PackedScene" uid="uid://b70hv4v75lr1p" path="res://player/player.tscn" id="4_oatnb"]
 [ext_resource type="PackedScene" uid="uid://c8lvpjoslcppl" path="res://Enemy/Enemy.tscn" id="5_h4wiv"]
 
