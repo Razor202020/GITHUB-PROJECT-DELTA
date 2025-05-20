@@ -38,6 +38,7 @@ func _process(float):
 		else:
 			$Sprite2D.play("Walk")
 	if Input.is_action_just_released("Down"):
+		await get_tree().create_timer(0.1).timeout
 		$Sprite2D.play("IDLE")
 #UP MOvemnet
 	if Input.is_action_pressed("Up"):
@@ -58,6 +59,7 @@ func _process(float):
 		else:
 			$Sprite2D.play("Walk")
 	if Input.is_action_just_released("Up"):
+		await get_tree().create_timer(0.1).timeout
 		$Sprite2D.play("IDLE")	
 #Left Movement
 	if Input.is_action_pressed("Left"):
@@ -68,6 +70,7 @@ func _process(float):
 			SPEED = 130
 			$Sprite2D.play("walk-left")
 	if Input.is_action_just_released("Left"):
+		await get_tree().create_timer(0.1).timeout
 		$Sprite2D.play("IDLE")		
 #Right Movement
 	if Input.is_action_pressed("Right"):
@@ -78,6 +81,7 @@ func _process(float):
 			SPEED = 130
 			$Sprite2D.play("Walk-forward")
 	if Input.is_action_just_released("Right"):
+		await get_tree().create_timer(0.1).timeout
 		$Sprite2D.play("IDLE")
 #GUN ACTIONS
 	#Shooting The Laser
@@ -91,6 +95,7 @@ func _process(float):
 			selected_laser = laser_markers[1]
 		laser.emit(selected_laser.global_position)
 	if Input.is_action_just_released("PrimaryAction"):
+		await get_tree().create_timer(0.1).timeout
 		$Sprite2D.play("IDLE")
 	#AimING and walking with the gun
 	#GUn facing Right
@@ -99,6 +104,7 @@ func _process(float):
 		$Sprite2D.play("gun")
 		Globals.player_direction = 'right'
 	if Input.is_action_just_released("Aim") and position.x < get_global_mouse_position().x:
+		await get_tree().create_timer(0.1).timeout
 		$Sprite2D.play("IDLE")
 		target = false
 	# gun facing LEft
@@ -107,6 +113,7 @@ func _process(float):
 		$Sprite2D.play("gun-left")
 		Globals.player_direction = 'left'
 	if Input.is_action_just_released("Aim") and position.x > get_global_mouse_position().x:
+		await get_tree().create_timer(0.1).timeout
 		$Sprite2D.play("IDLE")
 		target = false
 #Combat System
