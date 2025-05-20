@@ -1,7 +1,7 @@
 [gd_scene load_steps=24 format=3 uid="uid://c8lvpjoslcppl"]
 
 [ext_resource type="Script" path="res://Enemy/enemy.gd" id="1_1eoe5"]
-[ext_resource type="Texture2D" uid="uid://jo3e8jjay6u7" path="res://assets/crimsons/crmsnidlewalk.png" id="2_rjf78"]
+[ext_resource type="Texture2D" uid="uid://buyqjsbkhabvk" path="res://assets/crimsons/crmsnidlewalk.png" id="2_rjf78"]
 [ext_resource type="Script" path="res://Enemy/enemy_hitbox.gd" id="3_0udjp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1007k"]
