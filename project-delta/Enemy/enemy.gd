@@ -17,11 +17,11 @@ func _physics_process(delta):
 			else:
 				$AnimatedSprite2D.flip_h = true
 		else:
-			await get_tree().create_timer(0.2).timeout
+			await get_tree().create_timer(0.1).timeout
 			$AnimatedSprite2D.play("Idle")
 	if dead:
 		$DetectionArea/CollisionShape2D.disabled = true
-	if health == 0:
+	if health == 0 or health < 0:
 		death()
 func _on_detection_area_body_entered(body):
 	if body.has_method("player"):

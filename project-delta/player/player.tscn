@@ -323,7 +323,7 @@ debug_color = Color(1, 0.403922, 0.866667, 0.419608)
 wait_time = 0.75
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(6, 6)
+zoom = Vector2(5, 5)
 
 [connection signal="timeout" from="FireRate" to="." method="_on_fire_rate_timeout"]
 [connection signal="area_entered" from="playerHitbox" to="." method="_on_player_hitbox_area_entered"]
