@@ -1,6 +1,6 @@
 [gd_scene load_steps=50 format=3 uid="uid://d3vec7gnktyum"]
 
-[ext_resource type="Texture2D" uid="uid://bgwfqqwgp7nk5" path="res://assets/hud and gui/devname.png" id="1_2voxn"]
+[ext_resource type="Texture2D" uid="uid://bgwfqqwgp7nk5" path="res://assets/menu and misc/devname.png" id="1_2voxn"]
 [ext_resource type="Script" path="res://Level/loadup.gd" id="1_bvcq6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1fqvw"]

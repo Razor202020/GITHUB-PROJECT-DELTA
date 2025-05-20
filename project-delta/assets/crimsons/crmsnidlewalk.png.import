@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bgwfqqwgp7nk5"
-path="res://.godot/imported/devname.png-9d7955a65f6fab4cc8938db48bddab43.ctex"
+uid="uid://jo3e8jjay6u7"
+path="res://.godot/imported/crmsnidlewalk.png-da45b0bb97c5cf5b0dbbfdc3a8f9c6c4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/hud and gui/devname.png"
-dest_files=["res://.godot/imported/devname.png-9d7955a65f6fab4cc8938db48bddab43.ctex"]
+source_file="res://assets/crimsons/crmsnidlewalk.png"
+dest_files=["res://.godot/imported/crmsnidlewalk.png-da45b0bb97c5cf5b0dbbfdc3a8f9c6c4.ctex"]
 
 [params]
 
