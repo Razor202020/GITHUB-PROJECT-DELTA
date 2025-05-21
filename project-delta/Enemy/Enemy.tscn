@@ -97,7 +97,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"Idle",
-"speed": 10.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -126,11 +126,11 @@ animations = [{
 }],
 "loop": true,
 "name": &"enemyWalk",
-"speed": 14.0
+"speed": 9.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fs635"]
-radius = 139.058
+radius = 76.4853
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1llxb"]
 radius = 18.0
@@ -146,7 +146,7 @@ script = ExtResource("1_1eoe5")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-3, 1)
 sprite_frames = SubResource("SpriteFrames_ifdpg")
-animation = &"Idle"
+animation = &"enemyWalk"
 autoplay = "Idle"
 
 [node name="DetectionArea" type="Area2D" parent="."]
