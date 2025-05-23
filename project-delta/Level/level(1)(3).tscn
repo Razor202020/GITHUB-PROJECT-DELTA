@@ -1,9 +1,10 @@
-[gd_scene load_steps=25 format=4 uid="uid://c76nlkr2nx14b"]
+[gd_scene load_steps=26 format=4 uid="uid://c76nlkr2nx14b"]
 
 [ext_resource type="Script" path="res://Level/level(1)(3).gd" id="1_x4lkd"]
 [ext_resource type="Texture2D" uid="uid://detaky58bljgd" path="res://assets/environment/backgroundsheet (2).png" id="2_msev7"]
 [ext_resource type="Texture2D" uid="uid://jgbcayyhrs4e" path="res://assets/environment/bgsheet.png" id="3_5g1li"]
 [ext_resource type="PackedScene" uid="uid://b70hv4v75lr1p" path="res://player/player.tscn" id="4_yi5lm"]
+[ext_resource type="PackedScene" uid="uid://1lweh1cmrh56" path="res://Level/Box.tscn" id="5_pbn8k"]
 [ext_resource type="PackedScene" uid="uid://c8lvpjoslcppl" path="res://Enemy/Enemy.tscn" id="6_8238n"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_36p3d"]
@@ -130,8 +131,8 @@ size = Vector2(34.375, 48)
 size = Vector2(109.625, 384)
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_d42u6"]
-vertices = PackedVector2Array(1179.86, 625.07, 69.1797, 632.922, 79.8203, 38.9219, 1172.12, 30.0781)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+vertices = PackedVector2Array(602, 483.5, 1179.86, 625.07, 69.1797, 632.922, 514, 483.5, 613, 305.5, 613, 238.5, 1172.12, 30.0781, 79.8203, 38.9219, 525, 238.5, 602, 416.5, 525, 305.5, 514, 416.5)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 6, 1), PackedInt32Array(7, 6, 5, 8), PackedInt32Array(4, 1, 0, 9), PackedInt32Array(2, 7, 8, 10, 11), PackedInt32Array(10, 4, 9, 11), PackedInt32Array(2, 11, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(70, 29, 59, 643, 1190, 635, 1182, 20)])
 
 [node name="Level" type="Node2D"]
@@ -163,8 +164,15 @@ shape = SubResource("RectangleShape2D_snhg3")
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 navigation_polygon = SubResource("NavigationPolygon_d42u6")
 
-[node name="enemy" parent="." instance=ExtResource("6_8238n")]
-position = Vector2(455, 259)
+[node name="Node2D" parent="NavigationRegion2D" instance=ExtResource("5_pbn8k")]
+position = Vector2(558, 450)
+
+[node name="Node2D2" parent="NavigationRegion2D" instance=ExtResource("5_pbn8k")]
+position = Vector2(569, 272)
+
+[node name="enemy" parent="." node_paths=PackedStringArray("target_to_chase") instance=ExtResource("6_8238n")]
+position = Vector2(855, 343)
+target_to_chase = NodePath("../player")
 
 [connection signal="laser" from="player" to="." method="_on_player_laser"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

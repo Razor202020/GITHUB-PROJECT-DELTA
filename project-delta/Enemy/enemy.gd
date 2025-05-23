@@ -1,16 +1,28 @@
 extends CharacterBody2D
-var Speed = 80
+var Speed = 100
 var health = 100
 var dead = false
 var player_chase = false
 var player = null
+@onready var navigation_agent: NavigationAgent2D = $NavigationAgent2D
+@export var target_to_chase: CharacterBody2D
 func _ready():
 	dead = false
-func _physics_process(delta):
+	set_physics_process(false)
+	call_deferred("wait_for_physics")
+func wait_for_physics():
+	await  get_tree().physics_frame
+	set_physics_process(true)
+func _physics_process(_delta):
 	if !dead:
 		$DetectionArea/CollisionShape2D.disabled = false
 		if player_chase:
-			position += (player.position - position)/Speed
+			#position += (player.position - position)/Speed
+			if navigation_agent.is_navigation_finished() and target_to_chase.global_position == navigation_agent.target_position:
+				return
+			navigation_agent.target_position = target_to_chase.global_position
+			velocity = global_position.direction_to(navigation_agent.get_next_path_position()) * Speed
+			move_and_slide()
 			$AnimatedSprite2D.play("enemyWalk")
 			if(player.position.x - position.x) < 0:
 				$AnimatedSprite2D.flip_h = false
