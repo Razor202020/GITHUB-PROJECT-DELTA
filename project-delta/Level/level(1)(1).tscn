@@ -146,7 +146,7 @@ tile_map_data = PackedByteArray("AAAMAAQAAwADAAIAAAANAAQAAwACAAIAAAAPAAQAAwABAAI
 tile_set = SubResource("TileSet_8566c")
 
 [node name="player" parent="." instance=ExtResource("4_oatnb")]
-position = Vector2(415, 772)
+position = Vector2(138, 801)
 collision_layer = 19
 collision_mask = 19
 
