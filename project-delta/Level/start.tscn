@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://e20put82kwpa"]
+[gd_scene load_steps=9 format=3 uid="uid://e20put82kwpa"]
 
 [ext_resource type="Texture2D" uid="uid://ds56adtlt1x8o" path="res://assets/menu and misc/Title-1.png.png" id="1_3l0ys"]
 [ext_resource type="Script" path="res://Level/start.gd" id="1_13tsp"]
+[ext_resource type="FontFile" uid="uid://c4smogbvs6p5w" path="res://assets/menu and misc/cutepixel/CutePixel.ttf" id="3_6tng6"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_t6cyr"]
 texture = ExtResource("1_3l0ys")
@@ -58,10 +59,11 @@ size_flags_vertical = 3
 theme_override_colors/font_hover_pressed_color = Color(0.0392157, 0.596078, 0.0901961, 1)
 theme_override_colors/font_pressed_color = Color(0.0823529, 0.603922, 0.188235, 1)
 theme_override_colors/font_color = Color(0, 0.584314, 0, 1)
-theme_override_font_sizes/font_size = 30
+theme_override_fonts/font = ExtResource("3_6tng6")
+theme_override_font_sizes/font_size = 50
 theme_override_styles/focus = SubResource("StyleBoxEmpty_u1ukg")
 theme_override_styles/normal = SubResource("StyleBoxFlat_7qu0v")
-text = "Start game"
+text = "START"
 
 [node name="Button2" type="Button" parent="VBoxContainer"]
 layout_mode = 2
@@ -69,10 +71,11 @@ size_flags_vertical = 3
 theme_override_colors/font_hover_pressed_color = Color(0.0392157, 0.596078, 0.0901961, 1)
 theme_override_colors/font_pressed_color = Color(0.0823529, 0.603922, 0.188235, 1)
 theme_override_colors/font_color = Color(0, 0.584314, 0, 1)
-theme_override_font_sizes/font_size = 30
+theme_override_fonts/font = ExtResource("3_6tng6")
+theme_override_font_sizes/font_size = 50
 theme_override_styles/focus = SubResource("StyleBoxEmpty_1rexa")
 theme_override_styles/normal = SubResource("StyleBoxFlat_7qu0v")
-text = "Options"
+text = "OPTIONS"
 
 [node name="Button3" type="Button" parent="VBoxContainer"]
 layout_mode = 2
@@ -80,10 +83,12 @@ size_flags_vertical = 3
 theme_override_colors/font_hover_pressed_color = Color(0.0392157, 0.596078, 0.0901961, 1)
 theme_override_colors/font_pressed_color = Color(0.0823529, 0.603922, 0.188235, 1)
 theme_override_colors/font_color = Color(0, 0.584314, 0, 1)
-theme_override_font_sizes/font_size = 30
+theme_override_fonts/font = ExtResource("3_6tng6")
+theme_override_font_sizes/font_size = 50
 theme_override_styles/focus = SubResource("StyleBoxEmpty_kqfmc")
 theme_override_styles/normal = SubResource("StyleBoxFlat_7qu0v")
-text = "Credidts"
+text = "CREDITS
+"
 
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_button_2_pressed"]
