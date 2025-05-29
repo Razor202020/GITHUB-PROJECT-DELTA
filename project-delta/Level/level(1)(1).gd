@@ -8,7 +8,7 @@ func _process(_delta):
 	get_global_mouse_position()
 	if Input.is_action_pressed("interact") and flag == true:
 		flag = false
-		get_tree().change_scene_to_file("res://Level/level(1)(3).tscn")
+		get_tree().change_scene_to_file("res://Level/level(1)(2).tscn")
 func _on_player_laser(pos):
 	var laser = laser_scene.instantiate()
 	laser.position = pos
