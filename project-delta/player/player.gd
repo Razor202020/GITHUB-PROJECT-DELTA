@@ -10,7 +10,13 @@ var target = false
 var flag_left = false
 var health = Globals.player_health
 var Player_Alive = true
+
+	#DialogueManager.show_example_dialogue_balloon(load("res://dialogue/budi.dialogue"), "start")
+	#return
 func _process(float):
+	if Input.is_action_just_pressed("Progress"):
+		DialogueManager.show_example_dialogue_balloon(load("res://dialogue/budi.dialogue"), "start")
+		return
 	var direction = Input.get_vector("Left", "Right", "Up", "Down")
 	velocity = direction * SPEED
 	move_and_slide()

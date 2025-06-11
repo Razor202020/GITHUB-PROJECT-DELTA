@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_13"
+type="Resource"
+uid="uid://dl36r3h1hbe40"
+path="res://.godot/imported/budi.dialogue-82dece69486dc6ccfba6d4d53ca23d89.tres"
+
+[deps]
+
+source_file="res://dialogue/budi.dialogue"
+dest_files=["res://.godot/imported/budi.dialogue-82dece69486dc6ccfba6d4d53ca23d89.tres"]
+
+[params]
+
+defaults=true
