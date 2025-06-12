@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dgiw3ee25do4r"]
+[gd_scene load_steps=22 format=3 uid="uid://gcp8mp1ucmxf"]
 
 [ext_resource type="Texture2D" uid="uid://ds3r7s4sbadmu" path="res://assets/budi/budisheet.png" id="1_6wd66"]
 [ext_resource type="Texture2D" uid="uid://bqpyrgpnquath" path="res://assets/budi/budisheet (1).png" id="2_6tr5u"]
@@ -144,4 +144,5 @@ animations = [{
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D"]
 sprite_frames = SubResource("SpriteFrames_pseqo")
-animation = &"yap"
+animation = &"bootup"
+autoplay = "bootup"
