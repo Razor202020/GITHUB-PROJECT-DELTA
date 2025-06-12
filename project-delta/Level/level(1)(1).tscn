@@ -145,7 +145,7 @@ tile_map_data = PackedByteArray("AAAMAAQAAwADAAIAAAANAAQAAwACAAIAAAAPAAQAAwABAAI
 tile_set = SubResource("TileSet_8566c")
 
 [node name="player" parent="." instance=ExtResource("4_oatnb")]
-position = Vector2(138, 801)
+position = Vector2(131, 815)
 collision_layer = 19
 collision_mask = 19
 
@@ -183,8 +183,8 @@ shape = SubResource("RectangleShape2D_av2p8")
 polygon = PackedVector2Array(100, 714, 144, 714, 148, 700, 457, 714, 463, 714, 498, 714, 497, 651, 100, 652)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(300, 686)
-scale = Vector2(3.35938, 1)
+position = Vector2(855, 473)
+scale = Vector2(3.35938, 2.8125)
 texture = ExtResource("6_m1dhy")
 
 [connection signal="laser" from="player" to="." method="_on_player_laser"]
