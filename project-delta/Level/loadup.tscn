@@ -1,6 +1,7 @@
-[gd_scene load_steps=27 format=3 uid="uid://d3vec7gnktyum"]
+[gd_scene load_steps=28 format=3 uid="uid://d3vec7gnktyum"]
 
 [ext_resource type="Texture2D" uid="uid://bgwfqqwgp7nk5" path="res://assets/menu and misc/devname.png" id="1_2voxn"]
+[ext_resource type="Script" path="res://Level/loadup.gd" id="2_xpi7v"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_j3sy3"]
 atlas = ExtResource("1_2voxn")
@@ -173,17 +174,24 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_g7wjr")
 }],
-"loop": true,
+"loop": false,
 "name": &"default",
 "speed": 5.0
 }]
 
 [node name="loadup" type="AnimatedSprite2D"]
+position = Vector2(112.75, 53)
+scale = Vector2(20, 20)
 sprite_frames = SubResource("SpriteFrames_jbam8")
 autoplay = "default"
 frame_progress = 0.300993
+script = ExtResource("2_xpi7v")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(5, 5)
+zoom = Vector2(2, 2)
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
