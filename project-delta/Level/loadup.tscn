@@ -184,7 +184,7 @@ position = Vector2(72.375, -72)
 scale = Vector2(10, 10)
 sprite_frames = SubResource("SpriteFrames_jbam8")
 autoplay = "default"
-frame_progress = 0.806872
+frame_progress = 0.472046
 script = ExtResource("2_xpi7v")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
@@ -193,6 +193,6 @@ script = ExtResource("2_xpi7v")
 zoom = Vector2(2, 2)
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 3.8
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
