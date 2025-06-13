@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cwfvkbjadrvto"]
 
-[ext_resource type="Script" path="res://node_2d.gd" id="1_5e21k"]
+[ext_resource type="Script" path="res://actionfordialogue.gd" id="1_5e21k"]
 [ext_resource type="Resource" uid="uid://dl36r3h1hbe40" path="res://dialogue/budi.dialogue" id="2_renk1"]
 
 [node name="Node2D" type="Area2D"]
