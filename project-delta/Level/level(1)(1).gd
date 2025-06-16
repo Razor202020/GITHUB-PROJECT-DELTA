@@ -15,3 +15,5 @@ func _on_player_laser(pos):
 	$projectiles.add_child(laser)
 func _on_area_2d_body_exited(body: Node2D) -> void:
 	flag = false
+func _ready() -> void:
+	DialogueManager.show_example_dialogue_balloon(load("res://dialogue/budi.dialogue"), "start")
