@@ -1,10 +1,11 @@
-[gd_scene load_steps=41 format=3 uid="uid://b70hv4v75lr1p"]
+[gd_scene load_steps=42 format=3 uid="uid://b70hv4v75lr1p"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_uot3v"]
 [ext_resource type="Texture2D" uid="uid://hc4xqfibasfj" path="res://assets/astro/astro.png" id="2_j2sbp"]
 [ext_resource type="Texture2D" uid="uid://cvneh63bxvy32" path="res://assets/astro/astrowalk.png" id="3_xp2ar"]
 [ext_resource type="Texture2D" uid="uid://ddptt53xrr6uy" path="res://assets/astro/astrowalkr.png" id="4_ik7uk"]
 [ext_resource type="Texture2D" uid="uid://dn80ck5dmr034" path="res://assets/astro/astrowalkl.png" id="6_0o1jc"]
+[ext_resource type="PackedScene" uid="uid://gcp8mp1ucmxf" path="res://budi.tscn" id="6_llvvb"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kyvnw"]
 atlas = ExtResource("2_j2sbp")
@@ -324,6 +325,10 @@ wait_time = 0.75
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)
+
+[node name="AnimatedSprite2D" parent="." instance=ExtResource("6_llvvb")]
+position = Vector2(-238.874, 82.819)
+scale = Vector2(2.97004, 3.35238)
 
 [connection signal="timeout" from="FireRate" to="." method="_on_fire_rate_timeout"]
 [connection signal="area_entered" from="playerHitbox" to="." method="_on_player_hitbox_area_entered"]

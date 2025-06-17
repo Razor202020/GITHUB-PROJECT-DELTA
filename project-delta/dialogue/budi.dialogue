@@ -1,5 +1,22 @@
 ~ start
 
-Budi: Your vitals seem good commander. The trip was rough, but you’ve made it to BEARCLAW safely 
+Budi: Your vitals seem good commander. The trip was rough, but you’ve made it to BEARCLAW safely (Press space to progress dialogue)
+ASTRO: “…” 
+ASTRO: Bearclaw...? Like… the donut? 
+
+BUDI: Perhaps you hit your head harder than I thought commander… 
+BUDI: Do you remember what the mission was? 
+- YES
+	BUDI: Excellent.
+	BUDI: Let’s get started, shall we? 
+	BUDI: Enter the door on the right (use WASD to move) and (E to interact)
+- NO	
+	BUDI: You’re here to extract research materials for our scientist back home. 
+	BUDI: There was an accident here. While some have been evacuated, the alien species ____ have taken over BEARCLAW.
+	BUDI: You were assigned because of your decorated past.
+	BUDI: I’m afraid a team couldn’t be assigned to you due to… failed… attempts. 
+	BUDI: Resources are low commander; your work here is highly important. 
+	BUDI: Let’s get started, shall we? 
+	BUDI: Enter the door on the right (use WASD to move) and (E to interact)
 
 => END
