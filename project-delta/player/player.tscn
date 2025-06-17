@@ -329,9 +329,6 @@ zoom = Vector2(3, 3)
 [node name="AnimatedSprite2D" parent="." instance=ExtResource("6_llvvb")]
 position = Vector2(-238.874, 82.819)
 scale = Vector2(2.97004, 3.35238)
-animation = &"bootup"
-autoplay = ""
-frame_progress = 0.0
 
 [connection signal="timeout" from="FireRate" to="." method="_on_fire_rate_timeout"]
 [connection signal="area_entered" from="playerHitbox" to="." method="_on_player_hitbox_area_entered"]

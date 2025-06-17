@@ -2,7 +2,9 @@ extends AnimatedSprite2D
 var flag = true
 func _ready() -> void:
 	$".".play("bootup")
-	$Timer.start()
+	
+	while true:
+		$".".play("yap")
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("close"):
 		queue_free()
@@ -11,5 +13,4 @@ func _process(delta: float) -> void:
 
 
 func _on_timer_timeout() -> void:
-	while true:
-		$".".play("yap")
+	pass # Replace with function body.

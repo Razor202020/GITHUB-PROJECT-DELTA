@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://gcp8mp1ucmxf"]
+[gd_scene load_steps=35 format=3 uid="uid://gcp8mp1ucmxf"]
 
 [ext_resource type="Texture2D" uid="uid://ds3r7s4sbadmu" path="res://assets/budi/budisheet.png" id="1_6wd66"]
 [ext_resource type="Texture2D" uid="uid://bqpyrgpnquath" path="res://assets/budi/budisheet (1).png" id="2_6tr5u"]
@@ -75,6 +75,10 @@ region = Rect2(125, 32, 25, 16)
 [sub_resource type="AtlasTexture" id="AtlasTexture_5abbu"]
 atlas = ExtResource("1_6wd66")
 region = Rect2(100, 32, 25, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b7hkv"]
+atlas = ExtResource("1_6wd66")
+region = Rect2(0, 0, 25, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lorc0"]
 atlas = ExtResource("1_6wd66")
@@ -173,11 +177,14 @@ animations = [{
 "duration": 3.0,
 "texture": SubResource("AtlasTexture_5abbu")
 }],
-"loop": false,
+"loop": true,
 "name": &"bootup",
 "speed": 12.0
 }, {
 "frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b7hkv")
+}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_lorc0")
 }, {
@@ -217,11 +224,7 @@ animations = [{
 position = Vector2(3, -4)
 scale = Vector2(39.87, 32.875)
 sprite_frames = SubResource("SpriteFrames_pseqo")
-animation = &"bootup"
-frame = 17
-frame_progress = 1.0
+animation = &"yap"
+autoplay = "yap"
+frame_progress = 0.203107
 script = ExtResource("3_2dewf")
-
-[node name="Timer" type="Timer" parent="."]
-
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
