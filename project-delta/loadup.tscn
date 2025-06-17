@@ -262,6 +262,6 @@ script = ExtResource("2_ialht")
 zoom = Vector2(11, 11)
 
 [node name="GameStart" type="Timer" parent="."]
-wait_time = 2.5
+wait_time = 6.0
 
 [connection signal="timeout" from="GameStart" to="." method="_on_game_start_timeout"]
