@@ -1,11 +1,100 @@
-[gd_scene load_steps=9 format=3 uid="uid://e20put82kwpa"]
+[gd_scene load_steps=21 format=3 uid="uid://e20put82kwpa"]
 
-[ext_resource type="Texture2D" uid="uid://ds56adtlt1x8o" path="res://assets/menu and misc/Title-1.png.png" id="1_3l0ys"]
 [ext_resource type="Script" path="res://Level/start.gd" id="1_13tsp"]
+[ext_resource type="Texture2D" uid="uid://cswc8veloask0" path="res://assets/menu and misc/Titlescreen.png" id="2_ejukc"]
 [ext_resource type="FontFile" uid="uid://c4smogbvs6p5w" path="res://assets/menu and misc/cutepixel/CutePixel.ttf" id="3_6tng6"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_t6cyr"]
-texture = ExtResource("1_3l0ys")
+[sub_resource type="AtlasTexture" id="AtlasTexture_2mu4d"]
+atlas = ExtResource("2_ejukc")
+region = Rect2(0, 0, 500, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xmyli"]
+atlas = ExtResource("2_ejukc")
+region = Rect2(500, 0, 500, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k0jpo"]
+atlas = ExtResource("2_ejukc")
+region = Rect2(1000, 0, 500, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bo00a"]
+atlas = ExtResource("2_ejukc")
+region = Rect2(0, 300, 500, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fu8bk"]
+atlas = ExtResource("2_ejukc")
+region = Rect2(500, 300, 500, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v71n3"]
+atlas = ExtResource("2_ejukc")
+region = Rect2(1000, 300, 500, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c7kv4"]
+atlas = ExtResource("2_ejukc")
+region = Rect2(0, 600, 500, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6p2tf"]
+atlas = ExtResource("2_ejukc")
+region = Rect2(500, 600, 500, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_juedc"]
+atlas = ExtResource("2_ejukc")
+region = Rect2(1000, 600, 500, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_emvit"]
+atlas = ExtResource("2_ejukc")
+region = Rect2(0, 900, 500, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7m0tq"]
+atlas = ExtResource("2_ejukc")
+region = Rect2(500, 900, 500, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mhl0d"]
+atlas = ExtResource("2_ejukc")
+region = Rect2(1000, 900, 500, 300)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f562u"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2mu4d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xmyli")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k0jpo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bo00a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fu8bk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v71n3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c7kv4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6p2tf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_juedc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_emvit")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7m0tq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mhl0d")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_u1ukg"]
 
@@ -29,29 +118,23 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_13tsp")
 
-[node name="Panel" type="Panel" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_t6cyr")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(644.49, 385.094)
+scale = Vector2(2.56604, 2.56604)
+sprite_frames = SubResource("SpriteFrames_f562u")
+autoplay = "default"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -248.5
-offset_top = -149.0
-offset_right = 248.5
-offset_bottom = 149.0
-grow_horizontal = 2
+anchors_preset = -1
+anchor_top = 0.320988
+anchor_right = 0.434896
+anchor_bottom = 0.680556
+offset_top = 1.52588e-05
+offset_bottom = -3.05176e-05
 grow_vertical = 2
 theme_override_constants/separation = 40
+metadata/_edit_use_anchors_ = true
 
 [node name="Button" type="Button" parent="VBoxContainer"]
 layout_mode = 2
@@ -89,6 +172,10 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_kqfmc")
 theme_override_styles/normal = SubResource("StyleBoxFlat_7qu0v")
 text = "CREDITS
 "
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(567, 332)
+zoom = Vector2(1.5, 1.5)
 
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_button_2_pressed"]

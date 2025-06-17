@@ -200,7 +200,6 @@ scale = Vector2(4.3875, 3.96874)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/Node2D"]
 position = Vector2(2.05128, 14.6142)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_i6qax")
 
 [connection signal="laser" from="player" to="." method="_on_player_laser"]
