@@ -121,30 +121,31 @@ corner_radius_bottom_left = 16
 
 [node name="Control" type="Control"]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_right = 1.682
+anchor_bottom = 1.793
+offset_right = -1110.66
+offset_bottom = -329.864
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_13tsp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(644.49, 385.094)
-scale = Vector2(2.56604, 2.56604)
+position = Vector2(970.078, 586.047)
+scale = Vector2(3.86635, 3.86635)
 sprite_frames = SubResource("SpriteFrames_f562u")
 autoplay = "default"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.121528
-anchor_top = 0.458333
-anchor_right = 0.375868
-anchor_bottom = 0.904321
-offset_top = 1.52588e-05
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 154.0
+offset_top = -273.0
+offset_right = 684.0
+offset_bottom = 89.0
 grow_vertical = 2
 theme_override_constants/separation = 40
-metadata/_edit_use_anchors_ = true
 
 [node name="Button" type="Button" parent="VBoxContainer"]
 layout_mode = 2
@@ -191,9 +192,6 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_03e58")
 theme_override_styles/normal = SubResource("StyleBoxFlat_7qu0v")
 text = "CREDITS
 "
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(670, 379)
 
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_button_2_pressed"]
