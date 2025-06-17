@@ -96,18 +96,28 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_u1ukg"]
+[sub_resource type="Theme" id="Theme_8i1w7"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7qu0v"]
-bg_color = Color(0.302992, 0.66398, 0.690314, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hlw6f"]
+bg_color = Color(0.0509804, 0.305882, 0.384314, 1)
 corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1rexa"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_03e58"]
+bg_color = Color(0.0810327, 0.408971, 0.509836, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kqfmc"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7qu0v"]
+bg_color = Color(0.0509804, 0.223529, 0.309804, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -127,11 +137,11 @@ autoplay = "default"
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_top = 0.320988
-anchor_right = 0.434896
-anchor_bottom = 0.680556
+anchor_left = 0.121528
+anchor_top = 0.458333
+anchor_right = 0.375868
+anchor_bottom = 0.904321
 offset_top = 1.52588e-05
-offset_bottom = -3.05176e-05
 grow_vertical = 2
 theme_override_constants/separation = 40
 metadata/_edit_use_anchors_ = true
@@ -139,43 +149,51 @@ metadata/_edit_use_anchors_ = true
 [node name="Button" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_colors/font_hover_pressed_color = Color(0.0392157, 0.596078, 0.0901961, 1)
-theme_override_colors/font_pressed_color = Color(0.0823529, 0.603922, 0.188235, 1)
-theme_override_colors/font_color = Color(0, 0.584314, 0, 1)
+theme = SubResource("Theme_8i1w7")
+theme_override_colors/font_hover_pressed_color = Color(0, 1, 0.890196, 1)
+theme_override_colors/font_hover_color = Color(0, 1, 0.890196, 1)
+theme_override_colors/font_pressed_color = Color(0, 1, 0.890196, 1)
+theme_override_colors/font_color = Color(0, 0.705882, 0.619608, 1)
 theme_override_fonts/font = ExtResource("3_6tng6")
 theme_override_font_sizes/font_size = 50
-theme_override_styles/focus = SubResource("StyleBoxEmpty_u1ukg")
+theme_override_styles/hover = SubResource("StyleBoxFlat_hlw6f")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_03e58")
 theme_override_styles/normal = SubResource("StyleBoxFlat_7qu0v")
 text = "START"
 
 [node name="Button2" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_colors/font_hover_pressed_color = Color(0.0392157, 0.596078, 0.0901961, 1)
-theme_override_colors/font_pressed_color = Color(0.0823529, 0.603922, 0.188235, 1)
-theme_override_colors/font_color = Color(0, 0.584314, 0, 1)
+theme = SubResource("Theme_8i1w7")
+theme_override_colors/font_hover_pressed_color = Color(0, 1, 0.890196, 1)
+theme_override_colors/font_hover_color = Color(0, 1, 0.890196, 1)
+theme_override_colors/font_pressed_color = Color(0, 1, 0.890196, 1)
+theme_override_colors/font_color = Color(0, 0.705882, 0.619608, 1)
 theme_override_fonts/font = ExtResource("3_6tng6")
 theme_override_font_sizes/font_size = 50
-theme_override_styles/focus = SubResource("StyleBoxEmpty_1rexa")
+theme_override_styles/hover = SubResource("StyleBoxFlat_hlw6f")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_03e58")
 theme_override_styles/normal = SubResource("StyleBoxFlat_7qu0v")
 text = "OPTIONS"
 
 [node name="Button3" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_colors/font_hover_pressed_color = Color(0.0392157, 0.596078, 0.0901961, 1)
-theme_override_colors/font_pressed_color = Color(0.0823529, 0.603922, 0.188235, 1)
-theme_override_colors/font_color = Color(0, 0.584314, 0, 1)
+theme = SubResource("Theme_8i1w7")
+theme_override_colors/font_hover_pressed_color = Color(0, 1, 0.890196, 1)
+theme_override_colors/font_hover_color = Color(0, 1, 0.890196, 1)
+theme_override_colors/font_pressed_color = Color(0, 1, 0.890196, 1)
+theme_override_colors/font_color = Color(0, 0.705882, 0.619608, 1)
 theme_override_fonts/font = ExtResource("3_6tng6")
 theme_override_font_sizes/font_size = 50
-theme_override_styles/focus = SubResource("StyleBoxEmpty_kqfmc")
+theme_override_styles/hover = SubResource("StyleBoxFlat_hlw6f")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_03e58")
 theme_override_styles/normal = SubResource("StyleBoxFlat_7qu0v")
 text = "CREDITS
 "
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(567, 332)
-zoom = Vector2(1.5, 1.5)
+position = Vector2(670, 379)
 
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_button_2_pressed"]
