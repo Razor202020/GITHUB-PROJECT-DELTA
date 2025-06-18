@@ -181,7 +181,7 @@ animations = [{
 "duration": 3.0,
 "texture": SubResource("AtlasTexture_5abbu")
 }],
-"loop": true,
+"loop": false,
 "name": &"bootup",
 "speed": 12.0
 }, {
@@ -231,7 +231,12 @@ animations = [{
 position = Vector2(284.625, -89)
 scale = Vector2(39.87, 32.875)
 sprite_frames = SubResource("SpriteFrames_pseqo")
-animation = &"yap"
-autoplay = "yap"
-frame_progress = 0.203107
+animation = &"bootup"
+frame = 17
+frame_progress = 1.0
 script = ExtResource("3_2dewf")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 4.5
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

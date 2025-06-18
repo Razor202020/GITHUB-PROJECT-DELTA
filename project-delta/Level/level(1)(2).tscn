@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=4 uid="uid://c76nlkr2nx14b"]
+[gd_scene load_steps=27 format=4 uid="uid://c76nlkr2nx14b"]
 
 [ext_resource type="Script" path="res://Level/level(1)(2).gd" id="1_fo8vt"]
 [ext_resource type="Texture2D" uid="uid://detaky58bljgd" path="res://assets/environment/backgroundsheet (2).png" id="2_cfihd"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b70hv4v75lr1p" path="res://player/player.tscn" id="4_buylq"]
 [ext_resource type="PackedScene" uid="uid://c8lvpjoslcppl" path="res://Enemy/Enemy.tscn" id="5_0kfmv"]
 [ext_resource type="PackedScene" uid="uid://1lweh1cmrh56" path="res://Level/Box.tscn" id="5_p66lv"]
+[ext_resource type="PackedScene" uid="uid://ch6quq25spkh7" path="res://Level/server.tscn" id="7_v5e30"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_36p3d"]
 tile_data = PackedInt32Array(0, 0, 2, 65536, 0, 3)
@@ -128,7 +129,7 @@ pattern_12 = SubResource("TileMapPattern_ckjs3")
 size = Vector2(34.375, 48)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_snhg3"]
-size = Vector2(109.625, 384)
+size = Vector2(109.625, 449)
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_d42u6"]
 vertices = PackedVector2Array(620, 457.25, 678, 457.25, 587, 472.25, 601, 293.25, 678, 412.75, 620, 412.75, 434, 365.25, 434, 320.75, 543, 293.25, 1179.86, 625.07, 69.1797, 632.922, 529, 472.25, 601, 248.75, 1172.12, 30.0781, 79.8203, 38.9219, 543, 248.75, 587, 427.75, 529, 427.75, 376, 320.75, 376, 365.25)
@@ -158,8 +159,12 @@ shape = SubResource("RectangleShape2D_hh6y6")
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D2"]
-position = Vector2(141, 163)
+position = Vector2(97, 528)
 shape = SubResource("RectangleShape2D_snhg3")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D2"]
+position = Vector2(7, -3)
+polygon = PackedVector2Array(97, 597, 1140, 606, 1093, 551, 1092, 603, 1092, 352, 1045, 355, 1043, 297, 995, 300, 994, 204, 901, 205, 894, 65, 646, 56, 645, 198, 643, 151, 192, 142, 197, 201, 190, 456, 110, 465, 136, 541, 95, 153, 298, 56, 583, 8, 853, -16, 1002, 30, 1111, 201, 1205, 365, 1208, 595, 1073, 704, 664, 688, 254, 669)
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 position = Vector2(-21, -45)
@@ -184,6 +189,33 @@ target_to_chase = NodePath("../../player")
 [node name="enemy2" parent="NavigationRegion2D" node_paths=PackedStringArray("target_to_chase") instance=ExtResource("5_0kfmv")]
 position = Vector2(417, 455)
 target_to_chase = NodePath("../../player")
+
+[node name="Node2D5" parent="NavigationRegion2D" instance=ExtResource("7_v5e30")]
+position = Vector2(691, 208)
+
+[node name="Node2D6" parent="NavigationRegion2D" instance=ExtResource("7_v5e30")]
+position = Vector2(691, 208)
+
+[node name="Node2D5" parent="NavigationRegion2D/Node2D6" instance=ExtResource("7_v5e30")]
+position = Vector2(43, 0)
+
+[node name="Node2D5" parent="NavigationRegion2D/Node2D6/Node2D5" instance=ExtResource("7_v5e30")]
+position = Vector2(42, 0)
+
+[node name="Node2D5" parent="NavigationRegion2D/Node2D6/Node2D5/Node2D5" instance=ExtResource("7_v5e30")]
+position = Vector2(42, 0)
+
+[node name="Node2D5" parent="NavigationRegion2D/Node2D6/Node2D5/Node2D5/Node2D5" instance=ExtResource("7_v5e30")]
+position = Vector2(42, 1)
+
+[node name="Node2D5" parent="NavigationRegion2D/Node2D6/Node2D5/Node2D5/Node2D5/Node2D5" instance=ExtResource("7_v5e30")]
+position = Vector2(44, -2)
+
+[node name="Node2D5" parent="NavigationRegion2D/Node2D6/Node2D5/Node2D5/Node2D5/Node2D5/Node2D5" instance=ExtResource("7_v5e30")]
+position = Vector2(-568, 346)
+
+[node name="Node2D5" parent="NavigationRegion2D/Node2D6/Node2D5/Node2D5/Node2D5/Node2D5/Node2D5/Node2D5" instance=ExtResource("7_v5e30")]
+position = Vector2(37, -4)
 
 [connection signal="laser" from="player" to="." method="_on_player_laser"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

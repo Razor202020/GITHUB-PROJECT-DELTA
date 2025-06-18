@@ -10,6 +10,10 @@ BUDI: Do you remember what the mission was?
 	BUDI: Excellent.
 	BUDI: Let’s get started, shall we? 
 	BUDI: Enter the door on the right (use WASD to move) and (E to interact)
+	BUDI: Press shift to sprint
+	BUDI: use the mouse to chose the direction you are facing
+	BUDI: hold right click then press left click to fire the laser gun
+	BUDI: that is all good luck (to close my panel press enter)
 - NO	
 	BUDI: You’re here to extract research materials for our scientist back home. 
 	BUDI: There was an accident here. While some have been evacuated, the alien species ____ have taken over BEARCLAW.
@@ -18,5 +22,9 @@ BUDI: Do you remember what the mission was?
 	BUDI: Resources are low commander; your work here is highly important. 
 	BUDI: Let’s get started, shall we? 
 	BUDI: Enter the door on the right (use WASD to move) and (E to interact)
+	BUDI: Press shift to sprint
+	BUDI: use the mouse to chose the direction you are facing
+	BUDI: hold right click then press left click to fire the laser gun
+	BUDI: that is all good luck (to close my panel press enter)
 
 => END

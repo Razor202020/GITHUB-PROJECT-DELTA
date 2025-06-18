@@ -3,6 +3,10 @@
 [ext_resource type="Texture2D" uid="uid://bgwfqqwgp7nk5" path="res://assets/menu and misc/devname.png" id="1_s5nst"]
 [ext_resource type="Script" path="res://Level/loadup.gd" id="2_nb21l"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_gke8j"]
+atlas = ExtResource("1_s5nst")
+region = Rect2(74, 60, 37, 30)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_qycyc"]
 atlas = ExtResource("1_s5nst")
 region = Rect2(0, 0, 37, 30)
@@ -42,10 +46,6 @@ region = Rect2(0, 60, 37, 30)
 [sub_resource type="AtlasTexture" id="AtlasTexture_na35n"]
 atlas = ExtResource("1_s5nst")
 region = Rect2(37, 60, 37, 30)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_gke8j"]
-atlas = ExtResource("1_s5nst")
-region = Rect2(74, 60, 37, 30)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mya2u"]
 atlas = ExtResource("1_s5nst")
@@ -102,7 +102,10 @@ region = Rect2(111, 150, 37, 30)
 [sub_resource type="SpriteFrames" id="SpriteFrames_ib81l"]
 animations = [{
 "frames": [{
-"duration": 1.0,
+"duration": 5.0,
+"texture": SubResource("AtlasTexture_gke8j")
+}, {
+"duration": 4.0,
 "texture": SubResource("AtlasTexture_qycyc")
 }, {
 "duration": 1.0,

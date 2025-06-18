@@ -1,10 +1,12 @@
-[gd_scene load_steps=27 format=4 uid="uid://cetf8d16lrngc"]
+[gd_scene load_steps=29 format=4 uid="uid://cetf8d16lrngc"]
 
 [ext_resource type="Script" path="res://Level/level(1)(4).gd" id="1_uw3sc"]
 [ext_resource type="Texture2D" uid="uid://detaky58bljgd" path="res://assets/environment/backgroundsheet (2).png" id="2_q0i28"]
 [ext_resource type="Texture2D" uid="uid://jgbcayyhrs4e" path="res://assets/environment/bgsheet.png" id="3_iqyff"]
 [ext_resource type="PackedScene" uid="uid://b70hv4v75lr1p" path="res://player/player.tscn" id="4_5rnqo"]
 [ext_resource type="PackedScene" uid="uid://c8lvpjoslcppl" path="res://Enemy/Enemy.tscn" id="5_62ww2"]
+[ext_resource type="PackedScene" uid="uid://ch6quq25spkh7" path="res://Level/server.tscn" id="5_sh65x"]
+[ext_resource type="PackedScene" uid="uid://1lweh1cmrh56" path="res://Level/Box.tscn" id="7_1lsqj"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_36p3d"]
 tile_data = PackedInt32Array(0, 0, 2, 65536, 0, 3)
@@ -173,13 +175,29 @@ shape = SubResource("RectangleShape2D_6i25g")
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 navigation_polygon = SubResource("NavigationPolygon_8c4q8")
 
-[node name="enemy" parent="." node_paths=PackedStringArray("target_to_chase") instance=ExtResource("5_62ww2")]
-position = Vector2(299, 126)
-target_to_chase = NodePath("../player")
+[node name="Node2D" parent="NavigationRegion2D" instance=ExtResource("5_sh65x")]
+position = Vector2(-129, -15)
 
-[node name="enemy2" parent="." node_paths=PackedStringArray("target_to_chase") instance=ExtResource("5_62ww2")]
-position = Vector2(-26, 137)
-target_to_chase = NodePath("../player")
+[node name="Node2D2" parent="NavigationRegion2D" instance=ExtResource("5_sh65x")]
+position = Vector2(-93, -15)
+
+[node name="enemy" parent="NavigationRegion2D" node_paths=PackedStringArray("target_to_chase") instance=ExtResource("5_62ww2")]
+position = Vector2(299, 126)
+target_to_chase = NodePath("../../player")
+
+[node name="enemy2" parent="NavigationRegion2D" node_paths=PackedStringArray("target_to_chase") instance=ExtResource("5_62ww2")]
+position = Vector2(302, 210)
+target_to_chase = NodePath("../../player")
+
+[node name="Node2D3" parent="NavigationRegion2D" instance=ExtResource("7_1lsqj")]
+position = Vector2(33, 127)
+
+[node name="Node2D4" parent="NavigationRegion2D" instance=ExtResource("7_1lsqj")]
+position = Vector2(33, 152)
+
+[node name="Node2D5" parent="NavigationRegion2D" instance=ExtResource("7_1lsqj")]
+position = Vector2(199, 148)
+scale = Vector2(2, 2)
 
 [connection signal="laser" from="player" to="." method="_on_player_laser"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
