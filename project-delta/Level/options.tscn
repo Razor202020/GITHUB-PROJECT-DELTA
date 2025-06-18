@@ -1,0 +1,70 @@
+[gd_scene load_steps=6 format=3 uid="uid://dhy6f1bdkl8bj"]
+
+[ext_resource type="Texture2D" uid="uid://tkoddoh50btp" path="res://assets/menu and misc/Titlescreenblank.png" id="1_bpewu"]
+[ext_resource type="Script" path="res://Level/options.gd" id="1_iqp4m"]
+[ext_resource type="Texture2D" uid="uid://cr3ij1centwlu" path="res://pixel tape.png" id="2_x7kvp"]
+[ext_resource type="Script" path="res://Level/sprite_2d_3.gd" id="3_ffy2n"]
+
+[sub_resource type="Theme" id="Theme_tdpvf"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchor_right = 1.028
+anchor_bottom = 1.128
+offset_right = -32.256
+offset_bottom = -82.944
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_iqp4m")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(578, 340.5)
+scale = Vector2(2.284, 2.17)
+texture = ExtResource("1_bpewu")
+script = ExtResource("3_ffy2n")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -25.0
+offset_top = -134.0
+offset_right = 25.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+theme = SubResource("Theme_tdpvf")
+theme_override_colors/font_disabled_color = Color(0, 1, 0.890196, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 1, 0.890196, 1)
+theme_override_colors/font_hover_color = Color(0, 1, 0.890196, 1)
+theme_override_colors/font_pressed_color = Color(0, 1, 0.890196, 1)
+theme_override_colors/font_focus_color = Color(0, 1, 0.890196, 1)
+theme_override_colors/font_color = Color(0, 1, 0.890196, 1)
+theme_override_colors/font_outline_color = Color(0, 1, 0.890196, 1)
+text = "BACK"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(576.219, 338.416)
+rotation = 0.479966
+scale = Vector2(0.851532, 0.163234)
+texture = ExtResource("2_x7kvp")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(566, 362)
+rotation = -0.366519
+scale = Vector2(0.899286, 0.2)
+texture = ExtResource("2_x7kvp")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(560, 328)
+zoom = Vector2(2, 2)
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
