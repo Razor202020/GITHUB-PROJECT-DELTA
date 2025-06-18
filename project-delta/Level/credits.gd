@@ -2,4 +2,4 @@ extends Control
 
 
 func _on_backspace_pressed() -> void:
-	pass # Replace with function body.
+	get_tree().change_scene_to_file("res://Level/start.tscn")
