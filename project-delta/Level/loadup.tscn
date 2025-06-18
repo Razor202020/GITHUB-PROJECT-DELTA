@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://c5wxh4vp7llbw"]
+[gd_scene load_steps=28 format=3 uid="uid://cebhy2862tpgk"]
 
 [ext_resource type="Texture2D" uid="uid://bgwfqqwgp7nk5" path="res://assets/menu and misc/devname.png" id="1_s5nst"]
 [ext_resource type="Script" path="res://Level/loadup.gd" id="2_nb21l"]
@@ -237,19 +237,21 @@ animations = [{
 "duration": 1.2,
 "texture": SubResource("AtlasTexture_mqoai")
 }],
-"loop": true,
+"loop": false,
 "name": &"default",
 "speed": 12.0
 }]
 
 [node name="load" type="AnimatedSprite2D"]
 sprite_frames = SubResource("SpriteFrames_ib81l")
-frame_progress = 0.883628
+frame = 44
+frame_progress = 1.0
 script = ExtResource("2_nb21l")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(15, 15)
 
 [node name="Timer" type="Timer" parent="."]
+wait_time = 6.0
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
