@@ -90,6 +90,7 @@ text = "EMILY LIN"
 metadata/_edit_use_anchors_ = true
 
 [node name="Button" type="Button" parent="Control/eml/Button"]
+layout_mode = 0
 offset_left = -20.6078
 offset_top = 11.2406
 offset_right = 113.392
@@ -125,6 +126,7 @@ button_mask = 0
 text = "JORDAN LUM"
 
 [node name="Button" type="Button" parent="Control/jor/Button"]
+layout_mode = 0
 offset_left = -20.6078
 offset_top = 11.2406
 offset_right = 113.392
